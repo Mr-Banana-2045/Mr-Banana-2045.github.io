@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+	<html>
+<head> 
+    <title>banana buy</title> 
+    <style>
+    	body{
+    	background: linear-gradient(30deg, green,yellow,orange);
+    	text-align: center;
+    	}
+      	#searchbar{ 
+     border-radius: 30px;
+   } 
+   input[type=search] { 
+  padding: 30px 100px;
+  box-sizing: border-box;
+  border: 3px solid green;
+  outline: none;
+  font-weight: 800;
+  font-size: 30px;
+  background: none;
+  color: green;
+   } 
+  #list{ 
+    font-size:  1.5em; 
+   } 
+.animals{ 
+   display: list-item;     
+  }
+  img{
+  	height: 500px;
+  border-radius: 30px;
+  border: 3px solid red;
+  	}
+  .styles {
+  border-radius: 10px;
+  	}
+  h1{
+  	font-family: "Walter Turncoat", cursive;
+  	}
+  hr{
+  	background-color: red;
+        border-top: 5px dashed black;
+  	}
+  .top{
+  	position: fixed;
+  	float: right;
+  	}
+    	</style>
+    <link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Homemade+Apple|Lateef|Lora|Petit+Formal+Script|Schoolbell|Walter+Turncoat" rel="stylesheet">
+</head> 
+<body>
+	<div class="top">
+		<a href="link"><img src="account.png" style="height:80px;"></a><br>
+			<br><a href="link"><img src="buy.png" style="height:80px;"></a><br>
+				<br><a href="link"><img src="admin.png" style="height:80px;"></a></div>
+	<h1 style="color: green; font-weight: 300;">Buy bananas</h1>
+    <input id="searchbar" onkeyup="search_animal()" type="search" placeholder="search banana ....">
+    	<hr/>
+    <div id='list'> 
+    	<div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana Recet<br><a href="link"><img src="banana-comic-eyes-fresh-39983868.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 120.000 dollar</a></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana funny<br><a href="link"><img src="funny-bananas.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 300.000.000 dollar</a></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana bread<br><a href="link"><img src="banana-smileys-14994761.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 100 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana yellow<br><a href="link"><img src="banana-comic-eyes-fresh-39983868.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 100.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana me<br><a href="link"><img src="2d72813fab278286929c088f9984065e.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 180.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana hip<br><a href="link"><img src="00000-banana-with-hat-funny-pictures.webp"><div><a style="color: red; font-size: 12px; font-family: none;">$ 120.000.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana you<br><a href="link"><img src="banana-eyes-isolated-white-background-plastic-toys-products-funny-faces-vertical-frame-181679730.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 180.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana see<br><a href="link"><img src="funny-mr-fruit-tangerines-banana-kids-adults-made-bananas-mustache-hat-208060693.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 190.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana shy<br><a href="link"><img src="61qw28rzlcL._AC_UY580_.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 110.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana man<br><a href="link"><img src="artworks-LxLbTcnFd7107wIz-x7NSZA-t500x500.jpg"><div><a style="color: red; font-size: 12px; font-family: none;">$ 190.000.000 dollar</a></div></div></div></a>
+        <div class="styles">
+        <div class="animals" style="font-family: Cursive;">Banana monster<br><a href="link"><img src="m5unfzk3v4d91.png"><div><a style="color: red; font-size: 12px; font-family: none;">$ 140 dollar</a></div></div></div></a>
+        <hr/>
+        <h1 style="color:orange; font-size: 10px;">created by mr banana</h1>
+        <h3 style="font-size: 8px;">All rights of this site belong to <a style="color: red">Mr Banana</a></h3>
+    </div>
+    <script>
+function search_animal() { 
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('animals'); 
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+        } 
+        else { 
+            x[i].style.display="list-item";                  
+        } 
+    } 
+} 
+</script> 
+</body> 
+</html>
