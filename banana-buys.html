@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+	<html>
+<head> 
+    <title>banana buys</title> 
+    <style>
+    	body{
+    	background: linear-gradient(30deg, green,yellow,orange);
+    	text-align: center;
+   } 
+  img{
+  	height: 500px;
+  border-radius: 30px;
+  border: 3px solid red;
+  	}
+  h1{
+  	font-family: "Walter Turncoat", cursive;
+  color: black;
+  font-size: 30px;
+  	}
+  hr{
+  	background-color: red;
+        border-top: 5px dashed black;
+  	}
+  .top{
+  	position: fixed;
+  	float: right;
+  	}
+  input[type=text],[type=number],[type=date],[type=hidden],select{ 
+  	border-radius: 20px;
+  padding: 13px 12px;
+  box-sizing: border-box;
+  border: 3px solid green;
+  outline: none;
+  font-weight: 500;
+  font-size: 20px;
+  background: none;
+  color: green;
+   } 
+   .button{
+   	border-radius: 10px;
+   background: none;
+  	border: 3px solid red;
+  border: none;
+  color: green;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition:1.5s;
+   	}
+   .button:hover{
+       color:red;
+       box-shadow:0px 5px 40px 0 green inset,
+                  0px 5px 40px 0 green,
+                  0px 5px 40px 0 green inset,
+                  0px 5px 40px 0 green;
+       text-shadow:0 0 5px green 0 5px green;
+}
+.imgbox{
+ text-align:center;
+ margin:10px;
+ font-weight: 700;
+ overflow:hidden;
+}
+    	</style>
+    <script>
+    	function changeVisibility(){
+ document.getElementById("imgbox2").style.visibility = "visible";
+}
+</script>
+    <link href="https://fonts.googleapis.com/css?family=Euphoria+Script|Homemade+Apple|Lateef|Lora|Petit+Formal+Script|Schoolbell|Walter+Turncoat" rel="stylesheet">
+</head> 
+<body>
+	<div class="top">
+		<a href="banana-acounet (1).html"><img src="account.png" style="height:80px;"></a><br>
+			<br><a href="banana-buys.html"><img src="buy.png" style="height:80px;"></a><br>
+				<br><a href="banana-admin (1).html"><img src="admin.png" style="height:80px;"></a></div>
+	<h1 style="color: green; font-weight: 400;">buy bananas</h1>
+    	<hr/>
+    <h2 style="color: red; font-size: 20px; font-weight: 800;">Select your purchase from the main page and then find your purchase in the shopping cart section and fill out the form below</h2>
+    <input type="text" placeholder="Bnak name ..."><br>
+    <br><input type="number" placeholder="numbers card ..." multiple><br>
+    <br><input type="number" placeholder="cvv2 ..."><br>
+    <br><input type="date"><br>
+    <br>
+<select>
+<option>Choose the banana</option>
+  <option>recet</option>
+  <option>funny</option>
+  <option>breand</option>
+  <option>yellow</option>
+  <option>me</option>
+  <option>hip</option>
+  <option>you</option>
+  <option>see</option>
+  <option>shy</option>
+  <option >man</option>
+  <option>monster</option>
+</select>
+<br>
+    	<br><div onclick="changeVisibility();" class="button" style="border: 3px solid green;">sent</div>
+    <div class="imgbox" style="visibility:hidden; color:red" id="imgbox2">Your purchase has been completed</div>
+        <hr/>
+        <h1 style="color:orange; font-size: 20px;">created by mr banana</h1>
+        <h3 style="font-size: 15px;">All rights of this site belong to <a style="color: red">Mr Banana</a></h3>
+    </div>
+</body> 
+</html>
