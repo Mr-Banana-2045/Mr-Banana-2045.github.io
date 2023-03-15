@@ -1,0 +1,131 @@
+<html>
+	<meta  charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
+	<title>home</title>
+	<body onload="startTime()">
+		<header>
+			<p style="color: black;">free thoughts<Img class="Img" style="text-align: left;  display: block; position: fixed; top: 20px; right: 20px; " src="2159333.png"></p>
+			</header>
+			<div class="pop">
+			<a href="">help</a>
+            <a href="">GitHub</a>
+            <a href="">home</a>
+            <a href="">about us</a>
+			</div>
+			<div class="mo">
+				<a href="channel-afcar.html">
+			<div class="cha">
+				<d style="padding: 0px 10px 0px 10px; font-weight: 700; color: white;"><Img class ="mol"align="left" src="Cha.jpg">Theorizing<d style="position: absolute; right: 20px ; " id="txt"></d><br>
+<d style="padding: 0px 0px 0px 10px; font-size: 13px; font-weight: 300;">channel</d></d>
+				</div>
+				</div>
+				</a>
+				<div class="mo">
+					<a href="group-afcar.html">
+			<div class="cha">
+				<d style="padding: 0px 10px 0px 10px; font-weight: 700; color: white;"><Img class ="mol" align="left" src="Mic.jpg">Conversation<d style="position: absolute; right: 20px ; " id="current-time"></d><br>
+<d style="padding: 0px 0px 0px 10px; font-size: 13px; font-weight: 300;">group</d></d>
+				</div>
+				</div>
+				</a>
+		</body>
+		<style>
+			body{
+				 font-family: ui-sans-serif;
+				background: #000000;
+				}
+				header {
+					font-weight: 400;
+				font-size: 20px;
+					border: 1px solid white;
+					padding: 0px 0px 0px 10px;
+					border-radius: 15px;
+					background: #0043C9;
+					}
+					.Img{
+						height: 38px;
+						}
+						.Cha{
+							border:2px solid #0043C9;
+							border-radius: 10px;
+							height: 40px;
+							padding: 10px;
+							display: block; 
+							}
+							.mo a{
+								text-decoration: none;
+								color: black;
+								}
+							.mo{
+								padding: 10px 0px 0px 0px;
+								color: black;
+								}
+								.mol{
+									border-radius: 10px;
+									height: 40px;
+									}
+									.pop{
+										height: 25px;
+										margin: 0px 12px 10px 12px;
+										border:1px solid white;
+										text-align: center;
+										display: block;
+										right: 10px;
+										background: #0043C9;
+										border-radius: 0px 0px 10px 10px;
+										}
+										.pop a{
+											padding: 0px 25px 0px 0px;
+											color: white;
+											font-weight: 200;
+											text-decoration: none;
+											}
+			</style>
+			<script >
+function startTime()
+{
+var today=new Date();
+var h=today.getHours();
+var m=today.getMinutes();
+var s=today.getSeconds();
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m;
+t=setTimeout('startTime()',500);
+}
+function checkTime(i)
+{
+if (i<10)
+{
+i="0" + i;
+}
+return i;
+}
+</script>
+<script>
+const getTimeString = ({ hours, minutes, seconds, zone }) => {
+  if (minutes / 10 < 1) {
+    minutes = "0" + minutes;
+  }
+  if (seconds / 10 < 1) {
+    seconds = "0" + seconds;
+  }
+  return `${hours}:${minutes}`;
+};
+const renderTime = () => {
+  var currentTime = document.getElementById("current-time");
+  const currentDate = new Date();
+  var hours = currentDate.getHours();
+  var minutes = currentDate.getMinutes();
+  var seconds = currentDate.getSeconds();
+  var zone = hours >= 12 ? "PM" : "AM";
+  if (hours > 12) {
+    hours = hours % 12;
+  }
+  const timeString = getTimeString({ hours, minutes, seconds, zone });
+  currentTime.innerHTML = timeString;
+};
+
+setInterval(renderTime, 1000);
+</script>
+	</html>
