@@ -97,5 +97,19 @@ background-color: White;
 							border-radius: 0px 20px 20px 20px;
 							}
 			</style>
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      window.location.href = 'http://Mr-Banana-2045.github.io/group-afcar.html';
+    });
+  });
+</script>
 			<script src="https://sheetdb.io/handlebars.js"></script>
 	</html>
