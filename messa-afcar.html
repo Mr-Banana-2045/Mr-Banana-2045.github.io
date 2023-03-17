@@ -2,7 +2,7 @@
 	<meta  charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
 	<title>home</title>
-	<body onload="notify()">
+	<body onload="notify(),startTime()">
 		<header>
 			<p style="color: black;">free thoughts<Img class="Img" style="text-align: left;  display: block; position: fixed; top: 20px; right: 20px; " src="2159333.png"></p>
 			</header>
@@ -128,7 +128,7 @@ const renderTime = () => {
 
 setInterval(renderTime, 1000);
 </script>
-					<script type="text/javascript">
+<script type="text/javascript">
 		function notify() {
 			var option= {
 				body: ' welcome to free thoughts',
