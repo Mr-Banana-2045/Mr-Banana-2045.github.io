@@ -3,6 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
 	<meta http-equiv="refresh" content="5;messa-afcar.html">
 	<link href="https://fonts.googleapis.com/css2?family=Comforter&family=Open+Sans:wght@300&family=Quintessential&display=swap" rel="stylesheet">
+	<body onload="notify">
 		<div class="txt">
 		<center>
 			<Img src="2159333.png"/>
@@ -101,4 +102,14 @@ span:nth-child(5){
     text-align: center;
 	}
 			</style>
+<script type="text/javascript">
+		function notify() {
+			var option= {
+				body: ' welcome to free thoughts',
+				message: 'lolo',
+				icon: '2159333.png',
+			}
+			var notify = new Notification('new message', option);
+		}
+	</script>
 	</html>
