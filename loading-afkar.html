@@ -26,6 +26,15 @@
   <h1>Start without authentication</h1>
   </footer>
 		</body>
+	<script type="text/javascript">
+		function notify() {
+			var option= {
+				body: 'welcome to free thoughts',
+				icon: '2159333.png',
+			}
+			var notify = new Notification('new message', option);
+		}
+	</script>
 		<style>
 			body{
 				font-family: monospace;
@@ -102,14 +111,4 @@ span:nth-child(5){
     text-align: center;
 	}
 			</style>
-<script type="text/javascript">
-		function notify() {
-			var option= {
-				body: ' welcome to free thoughts',
-				message: 'lolo',
-				icon: '2159333.png',
-			}
-			var notify = new Notification('new message', option);
-		}
-	</script>
 	</html>
