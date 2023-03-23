@@ -1,5 +1,5 @@
 # web-we
-News website
+New website
 
 # web:
 > https://Mr-Banana-2045.github.io/banana_search.html
