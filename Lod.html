@@ -1,0 +1,116 @@
+<html Lang="en">
+	<title>Builders base</title>
+	<meta  charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
+	<body>
+		<div class="hed">
+		<header>
+			<Img class="Img" style="left: 10px; top: 30px;border-radius: 10px 10px 10px 10px; margin: 15px 10px 0px 0px;" align="left" src="358903.png"><p>Builders base<a href="messa-afcar.html"><Img style="height: 40px; top: 20px; right: 20px; text-align: left; display: block; position: fixed;" src="Redo.png"/></p></a>
+			</header>
+			</div>
+			<div class="mol">
+			<table>
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/7cjchecea3t30"
+         data-sheetdb-sort-by="age"
+  data-sheetdb-sort-order="desc">
+  	<tr class="msg">
+    	<tr class="bar">
+  <td style="color: white; margin: 0px 0px 0px 0px;"><p style="color:red; font-weight:800;">developer</p>{{id}}</td>
+    </tr>
+    </Tr>
+  </tbody>
+</table>
+</div>
+<form method="post" action="https://sheetdb.io/api/v1/7cjchecea3t30" id="sheetdb-form">
+	<div style="background: #FF0009; font-weight: 800; font-size: 20px; border: 1px solid white; border-radius: 10px; text-align: center; padding: 10px;">
+<input type="text" placeholder="type code . . ." name="data[id]"><button type="submit" type="button">sent</button>
+</div>
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      window.location.href = 'https://Mr-Banana-2045.github.io/lod.html';
+    });
+  });
+</script>
+		</body>
+		<style>
+			input{
+				outline: none;
+				font-weight: 400;
+				font-size: 17px;
+				background: none;
+				border:2px solid black; 
+				border-radius: 10px 0px 0px 10px;
+				padding: 10px;
+				color: White;
+				}
+				button{
+					border:2px solid black;
+					border-radius: 0px 10px 10px 0px;
+					font-weight: 700;
+					color: black;
+				font-size: 17px;
+				outline: none;
+				background: none;
+				padding: 10px;
+					}
+			.mol{
+    height:550px;
+    overflow-y:scroll;
+			}
+			.bar{
+				border:2px solid #FF0009;
+				border-radius: 0px 20px 20px 20px;
+				display: flex;
+				margin:7px auto;
+				padding: 10px 10px 10px 10px;
+				}
+			.mol::-webkit-scrollbar-track {
+background: nano;
+}
+.mol::-webkit-scrollbar {
+width: 2px;
+}
+.mol::-webkit-scrollbar-thumb {
+background: white;
+}
+.mol::-webkit-scrollbar-thumb:hover {
+background: white;
+}
+.mol::-webkit-scrollbar-button{
+background-color: White;
+
+}
+			body{
+				background: black;
+				font-family: monospace;
+				}
+				header {
+					font-weight: 900;
+				font-size: 20px;
+					border: 1px solid white;
+					padding: 0px 0px 0px 10px;
+					border-radius: 15px;
+					background: red;
+					}
+					.hed{
+						padding: 0px 0px 15px 0px;
+						}
+					.Img{
+						height: 38px;
+						}
+						.msg{
+							border:2px solid #FF0009;
+							border-radius: 0px 20px 20px 20px;
+							}
+			</style>
+			<script src="https://sheetdb.io/handlebars.js"></script>
+	</html>
+	</html>
