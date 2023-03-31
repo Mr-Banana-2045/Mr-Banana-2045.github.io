@@ -24,6 +24,12 @@
     </Tr>
   </tbody>
 </table>
+<script>
+    $.getJSON('http://time.jsontest.com', function(data) {
+        var text = ` ${data.time}`
+        $(".moz").html(text);
+    });
+    </script>
 </div>
 <p style="background: #FF0009; font-weight: 800; font-size: 20px; border-radius: 20px; text-align: center; padding: 10px;">no message</p>
 		</body>
@@ -91,11 +97,5 @@ background-color: #FF0009;
 							border-radius: 0px 20px 20px 20px;
 							}
 			</style>
-<script>
-    $.getJSON('http://time.jsontest.com', function(data) {
-        var text = ` ${data.time}`
-        $(".moz").html(text);
-    });
-    </script>
 			<script src="https://sheetdb.io/handlebars.js"></script>
 	</html>
