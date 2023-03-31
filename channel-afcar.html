@@ -1,8 +1,11 @@
 <html>
+<head>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<meta  charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
 	<link rel="icon" type="image/x-icon" href="2159333.png">
 	<title>channel</title>
+</Head>
 	<body>
 		<div class="hed">
 		<header>
@@ -16,7 +19,7 @@
   data-sheetdb-sort-order="desc">
   	<tr class="msg">
     	<tr class="bar">
-  <td style="color: white; margin: 0px 0px 0px 0px;"><p style="color:red; font-weight: 900;">channel</p>{{id}}<br><hr style="background:red;"><d class="od" style="padding: 0px 0px 0px 5px; font-size: 15px;">★</d><d style="margin-left: 33px; font-size:6px; font-weight:200;"><script>moz = Date(); document.write(moz);</script></d><d class="Po" style="font-size: 20px; margin-left: 30px;">❦</d></td>
+  <td style="color: white; margin: 0px 0px 0px 0px;"><p style="color:red; font-weight: 900;">channel</p>{{id}}<br><hr style="background:red;"><d class="od" style="padding: 0px 0px 0px 5px; font-size: 15px;">★</d><d style="margin-left: 33px; font-size:6px; font-weight:200;" class="moz"></d><d class="Po" style="font-size: 20px; margin-left: 30px;">❦</d></td>
     </tr>
     </Tr>
   </tbody>
@@ -88,5 +91,11 @@ background-color: #FF0009;
 							border-radius: 0px 20px 20px 20px;
 							}
 			</style>
+<script>
+    $.getJSON('http://time.jsontest.com', function(data) {
+        var text = ` ${data.time}`
+        $(".moz").html(text);
+    });
+    </script>
 			<script src="https://sheetdb.io/handlebars.js"></script>
 	</html>
