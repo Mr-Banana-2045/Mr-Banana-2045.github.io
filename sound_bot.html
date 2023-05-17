@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
+<body>
+	<center>
+	<div class="vasat">
+		<div style="margin-right:145px;" class="cheshm"><div style="margin-left: 145px;" class="cheshm"></div></div><br>
+		<div class="lab"></div>
+			</div>
+			<div class="raco">
+    <input type="text" id="message" placeholder="message">
+    <button onclick="checktext()">sent</button>
+    </div>
+    </center>
+<script>
+function checktext(){
+var input = document.getElementById("message").value;
+if( input == "Hello" ){
+               var msg = new SpeechSynthesisUtterance();
+msg.text = "Salam doosthee man";
+window.speechSynthesis.speak(msg);
+            }
+            else if( input == "Bye" ){
+               var msg = new SpeechSynthesisUtterance();
+msg.text = "khooda hafez doosthee man";
+window.speechSynthesis.speak(msg);
+            }
+            else if( input == "You name" ){
+               var msg = new SpeechSynthesisUtterance();
+msg.text = "man yek bot sokhangoo hastam shooma mytoony man ra be esm hay mokhtalef seda koony";
+window.speechSynthesis.speak(msg);
+            }
+            else if( input == "Help" ){
+               alert("welcome to sound bot\n Hello - Bye - You name - Help - Web");
+            }
+            else if( input == "Web" ){
+            	var msg = new SpeechSynthesisUtterance();
+            msg.text = "website ma ba address https://tagviathoosh.ir";
+            window.speechSynthesis.speak(msg);
+            alert("https://tagviathoosh.ir");
+            	}
+            else if( input == "" ){
+            	var msg= new SpeechSynthesisUtterance();
+            msg.text = ("");
+            window.speechSynthesis.speak(msg);
+            	}
+            else{
+               var msg = new SpeechSynthesisUtterance();
+               msg.text =("moshkeel dar voroodii");
+               window.speechSynthesis.speak(msg);
+            }
+}
+    </script>
+    <style>
+body{
+    	background: #0037FF;
+    	}
+    .cheshm{
+					width: 90px;
+					height: 150px;
+					background: #0005C2;
+					border-radius: 50px 50px 0px 0px;
+					}
+					.lab{
+					width: 200px;
+					height: 40px;
+					background: #0005C2;
+					border-radius: 0px 0px 50px 50px;
+						}
+						.vasat{
+							position: relative;
+							Margin-top: 250px;
+							}
+							input{
+								margin-top: 5px;
+								outline: none;
+								border: 2px solid blue; 
+								width: 320px;
+								background: #A2A2A2;
+								color: white;
+								height: 40px;
+								border-radius: 10px 0px 0px 10px;
+								}
+								button {
+									font-size: 15px;
+									font-weight: 900;
+									border-radius: 0px 10px 10px 0px;
+									height: 40px;
+									outline: none;
+									background: gray;
+									color: black;
+									border: 2px solid blue;
+									}
+									.raco{
+										background: #0005C2;
+										border-radius: 10px;
+										padding: 5px;
+										position: fixed;
+			left: 0;
+			bottom: 0;
+			right: 0;
+										}
+    </styel>
+</body>
+</html>
