@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+	<title>chat testing</title>
+	<style>
+		body{
+			background: #474747;
+			}
+			.chat-container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #616161;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px black;
+}
+#messages {
+	height: 520px;
+	overflow-y: scroll;
+	margin-bottom: 10px;
+	color: #045C00;
+	padding: 10px;
+	background-color: #5BB400;
+	border-radius: 5px;
+	box-shadow: 0px 0px 50px #5BB400;
+}
+
+#message, #username{
+	display: block;
+	width: 374px;
+	margin-bottom: 10px;
+	padding: 10px;
+	font-size: 16px;
+	outline:none;
+	background: none;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0px 0px 5px black;
+}
+
+#send {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: #616161;
+	color: black;
+	font-weight: 900;
+	font-size: 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	outline:none;
+}
+#send[type="submit"]:hover{
+	display: block;
+	background-color: #4E4E4E;
+	box-shadow: 0px 0px 50px #4E4E4E;
+	border-radius: 5px;
+	cursor: pointer;
+	border: none;
+	outline:none;
+	}
+.moz{
+	position: fixed;
+	bottom: 0;
+	left:0;
+	right:0;
+	padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<div class="chat-container">
+		<div id="messages"></div>
+		<form class="moz">
+			<input type="text" id="username" placeholder="typing username...">
+			<input type="text" id="message" placeholder="typing message...">
+			<button type="submit" id="send">send</button>
+		</form>
+		</div>
+	<script>
+const messages = JSON.parse(localStorage.getItem('messages')) || [];
+const messagesDiv = document.querySelector('#messages');
+let username = 'unclown';
+if (messages.length > 0) {
+	messages.forEach(message => {
+		messagesDiv.innerHTML += `<strong>${username}: </strong>${message}<hr>`;
+	});
+}
+document.querySelector('form').addEventListener('submit', e => {
+	e.preventDefault();
+	const messageInput = document.querySelector('#message');
+	const usernameInput = document.querySelector('#username');
+	const message = messageInput.value;
+	const username = usernameInput.value;
+	if (message.trim() !== '') {
+		messages.push(message);
+		localStorage.setItem('messages', JSON.stringify(messages));
+		messagesDiv.innerHTML += `<strong>${username}: </strong>${message}<hr>`;
+		messageInput.value = '';
+	}
+});
+</script>
+</body>
+</html>
