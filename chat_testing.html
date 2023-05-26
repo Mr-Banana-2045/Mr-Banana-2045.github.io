@@ -83,7 +83,7 @@
 	<script>
 const messages = JSON.parse(localStorage.getItem('messages')) || [];
 const messagesDiv = document.querySelector('#messages');
-let username = 'unclown';
+let username = 'unknown';
 if (messages.length > 0) {
 	messages.forEach(message => {
 		messagesDiv.innerHTML += `<strong>${username}: </strong>${message}<hr>`;
