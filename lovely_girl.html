@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lovely girl</title>
+   <style>
+@import url('https://fonts.googleapis.com/css?family=Dosis|Quicksand');
+				body{
+					background: #FFD6E9;
+					font-family: Quicksand;
+					}
+
+.chat-header {
+    background-color: #FF5C5F;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    height: 70px;
+  top:0;
+  left:0;
+  right:0;
+}
+.chat-body {
+    margin-top:100px;
+    padding: 5px;
+    height: 650px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left:0;
+    right: 0;
+    background: #FFD6E9;
+    bottom:0;
+    padding: 10px;
+}
+
+#user-input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    border: none;
+}
+
+#send-btn {
+    background-color: #FF5C5F;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-bot {
+    background-color: #f1f0f0;
+    color: black;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    align-self: flex-start;
+}
+
+.message-user {
+    background-color: #FF8A8B;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 50%;
+}
+</style>
+</head>
+<body onload="setInterval(displayDateTime,1000)">
+        <div class="chat-header">
+            <h2>lovely girl<br>
+            <span id="dateTime" style="font-size:5px;"></span></h2>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message-bot">Enter the help command to check the parameters</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type a message..." id="user-input">
+            <button id="send-btn">Send</button>
+        </div>
+
+    <script>
+const chatBody = document.querySelector('#chat-body');
+const sendBtn = document.querySelector('#send-btn');
+const userInput = document.querySelector('#user-input');
+
+sendBtn.addEventListener('click', () => {
+    sendMessage();
+});
+
+function sendMessage() {
+    const userMessage = userInput.value;
+
+    const messageUser = `
+        <div class="message" style="display: flex; align-items: right; justify-content: right;">
+            <div class="message-user">${userMessage}</div>
+        </div>
+    `;
+
+    chatBody.insertAdjacentHTML('beforeend', messageUser);
+
+    if (userMessage.includes('Hello') || userMessage.includes('Hi')) {
+        botMessage = 'hi! How are you?';
+    } else if (userMessage.includes('thank you') || userMessage.includes('Thank')) {
+        botMessage = 'please my friend';
+    } else if (userMessage.includes('what is your name') || userMessage.includes('your name')) {
+        botMessage = 'My name is Melissa, my friend';
+    } else if (userMessage.includes('Nice to meet you') || userMessage.includes('ok')) {
+        botMessage = 'I am your friend?';
+    } else if (userMessage.includes('yes') || userMessage.includes('yee')) {
+        botMessage = 'Thank you very much';
+    } else if (userMessage.includes('bye')) {
+        botMessage = 'bye my friend';
+    } else {
+        botMessage = 'Sorry, I could not process your question';
+    }
+
+    const messageBot = `
+        <div class="message">
+            <div class="message-bot">${botMessage}</div>
+        </div>
+    `;
+
+    chatBody.insertAdjacentHTML('beforeend', messageBot);
+
+    userInput.value = '';
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+</script>
+<script type="text/javascript">
+		function displayDateTime() {
+			let currentDate = new Date();
+			let time = currentDate.toLocaleTimeString('en-IR');
+			document.getElementById("dateTime").innerHTML =  time;
+		}
+	</script>
+</body>
+</html>
