@@ -1,0 +1,26 @@
+<html lang="en">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
+	<body>
+		<title>code bye</title>
+<script>
+	function check(){
+var input = document.getElementById("msg").value;
+var ciphertext = btoa(input);
+document.getElementById("code").innerHTML =  ciphertext;
+}
+</script>
+<script>
+	function ok(){
+var input = document.getElementById("mas").value;
+var decrypted = atob(input);
+document.getElementById("dec").innerHTML =  decrypted;
+}
+</script>
+<h1>decode</h1>
+<input id="msg" type="text"><button onclick="check()" type="submit">GO</button><br><p id="code"></p>
+<br><hr>
+<h1>encode</h1>
+<input id="mas" type="text"><button onclick="ok()" type="submit">GO</button><br><p id="dec"></p>
+</body>
+</html>
+
