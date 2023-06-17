@@ -12,40 +12,45 @@
     font-family: 'Scheherazade', serif;
     	}
     input[type="text"]{
-    	border-radius: 10px 10px 0px 0px;
+    	border-radius: 5px 5px 0px 0px;
     padding: 5px;
     border: 1px solid black;
     margin-top:-20px;
     float:left;
+    font-weight:900;
     margin-left:90px;
     outline: none;
     	}
     input[type="search"]{
-    	border-radius: 0px 0px 0px 10px;
+    	border-radius: 0px;
     padding: 5px;
     margin-bottom:5px;
     border: 1px solid black;
     float:left;
     margin-top:-0px;
+    font-weight:900;
     margin-left: 90px;
     outline: none;
     	}
     .sns{
-    	background: #fff;
+    	background: #CBCBCB;
     padding: 5px;
-    float:left;
-    margin-left:0px;
+    float:right;
+    margin-top:-5px;
+    margin-right: 99px;
+    width:192px;
     border: 1px solid black;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 0px 5px 5px;
     	}
     .sns:hover{
-    	background: #555555;
+    	background: #AAAAAA;
     	}
     iframe{
-    	height: 528px;
+    	height: 526px;
     width: 370px;
     position: absolute;
-    top:85px;
+    top:110px;
+    background: #fff;
     left:10px;
     margin-top: 100px;
     border:1px solid black;
@@ -55,7 +60,8 @@
     position: absolute;
     height:130px;
     top:0;
-    height: 180px;
+    height: 210px;
+    border-radius: 0px 0px 10px 10px;
     color: white;
     left:0;
     right:0;
@@ -64,6 +70,7 @@
     	position: absolute;
     bottom:0;
     left:0;
+    border-radius: 10px 10px 0px 0px;
     right:0;
     background: #000;
     color: white;
@@ -76,7 +83,7 @@
 </head>
 <body>
   <header>
-<svg version="1.0" style="float:left; margin-top:30px; margin-left: 65px;" xmlns="http://www.w3.org/2000/svg"
+<svg version="1.0" style="float:left; margin-top:30px; margin-left: 40px;" xmlns="http://www.w3.org/2000/svg"
  width="60px" height="60px" viewbox="0 0 1279.000000 1280.000000"
  preserveaspectratio="xmidymid meet">
 <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)"
@@ -1061,11 +1068,12 @@ l-13 23 -6 -25 c-4 -17 -14 -26 -31 -28 -35 -4 -158 61 -278 147 -100 72 -120
 <path d="m2103 4123 c-7 -2 -13 -15 -13 -28 0 -18 7 -25 30 -30 35 -8 50 0 50
 24 0 32 -32 49 -67 34z"/>
 </g>
-</svg><h1 style="float:left; margin-top:20px; margin-left: 0px;">جستجوگر داخلی
+</svg><h1 style="float:left; margin-top:20px; margin-left: 0;">جستجوگر داخلی
     <p style="font-size:12px;">از موتور جستجوهای ایرانی استفاده کنید</p></h1>
   <form action="#" method="get">
-  	<input type="text" id="web-input" placeholder="Search engine address ..." oninvalid="MyMessage();" required>
-    	<input type="search" id="url-input" placeholder="Search text ..."><svg class="sns" id="load-button" version="1.0" xmlns="http://www.w3.org/2000/svg"
+  	<input type="text" id="web-input" placeholder="Search engine address ..." oninvalid="MyMessage();" required />
+    	<input type="search" id="url-input" placeholder="Search text ..." />
+    	<svg class="sns" id="load-button" version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="15px" height="15px" viewBox="0 0 1280.000000 1230.000000"
  preserveAspectRatio="xMidYMid meet">
 <g transform="translate(0.000000,1230.000000) scale(0.100000,-0.100000)"
@@ -1091,7 +1099,7 @@ fill="#000" stroke="none">
     </div>
 </header>
     <footer>
-    	<p>قدرت گرفته از سرزمین موز ها</p>
+    	<p style="font-size:10px; font-weight:200;">قدرت گرفته از سرزمین موز ها</p>
     	</footer>
   <script>
 const loadButton = document.getElementById('load-button');
@@ -1106,7 +1114,7 @@ loadButton.addEventListener('click', () => {
     webpageFrame.src = web +'search?q='+ url;
   }
   else{
-  	alert("فیلد ها خالی است");
+  	alert("فیل ها خالی است");
   	}
 });
 </script>
