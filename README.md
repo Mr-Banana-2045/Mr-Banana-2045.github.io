@@ -13,3 +13,5 @@ New website
 > https://mr-banana-2045.github.io/en-de.html
 >
 > https://mr-banana-2045.github.io/index_bot.html
+>
+> https://Mr-Banana-2045.github.io/dos.html
