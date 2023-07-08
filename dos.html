@@ -41,7 +41,7 @@
                 if (xhr.readyState === 4) {
                     if (xhr.status === 200) {
                     	for (var i = 0; i < 200; i++) {
-                setTimeout(sendRequest, i * 5000, url);
+                setTimeout(sendRequest, i * 800, url);
                 }
                         outputElement.innerHTML += "<p>request was sent</p>";
                     } else {
