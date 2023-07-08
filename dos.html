@@ -30,6 +30,9 @@
         });
 
         function sendRequest(url) {
+		for (var i = 0; i < 200; i++) {
+            setTimeout(sendRequest, i * 5000, url);
+	    }
             if (url.trim() === "") {
                 outputElement.innerHTML += "<p>error</p>";
                 return;
