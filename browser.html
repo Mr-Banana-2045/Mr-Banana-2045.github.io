@@ -1,0 +1,61 @@
+<html lang="en">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Auxiliary code</title>
+<body>
+	<center>
+	<code><h1 style="color:white; margin-top:40px; font-size:30px;"><a style="color:red;"><</a>Auxiliary code<a style="color:red;">></a></h1></code>
+	<div>
+<input type="text" placeholder="search ..." id="ok">
+<button onclick="moz()"><Img SRC="icons8-search.svg"></button>
+</div>
+<pre><code><textarea style="visibility:hidden; color:white; position: absolute; width:85%; left:30px; background:black; border:none;" id="result" rows="37" disabled>Searching ...</textarea></code></pre>
+</div>
+<code><d style="color:white; position: absolute; bottom:5; left: 33%;">open source <a style="color:red;" href="https://GitHub.com/Mr-Banana-2045">GITHUB</a></d></code>
+</center>
+    </body>
+    <style>
+    	body{
+    	background:#000000;
+    	}
+    input{
+    	border-radius:10px 0px 0px 10px;
+    width:50%;
+    height:3%;
+    background:white;
+    padding-left:10px;
+    outline:none;
+    border:none;
+    	}
+    button{
+    	border-radius:0px 10px 10px 0px;
+    background:white;
+    height:3%;
+    border: none;
+    position: relative;
+    left: -4px;
+    top:3px;
+    outline: none;
+    	}
+    	</style>
+<script>
+function moz(){
+document.getElementById("result").style.visibility = "visible";
+var text = document.getElementById("ok").value;
+if( text.includes("source")){
+	fetch('https://nahanabzar.ir/ai?text='+text)
+        .then(response => response.json())
+        .then(data => {
+            const resultElement = document.getElementById("result");
+            const desiredResult = data["answer"];
+            
+            resultElement.innerText = "BOT : " + desiredResult;
+        })
+        .catch(error => console.log(error));
+}
+else{
+	const resultElement = document.getElementById("result");
+                  resultElement.innerText= "Error";
+            }
+            }
+    </script>
+    </html>
