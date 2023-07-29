@@ -28,7 +28,9 @@
 </div>
 <form method="post" action="https://sheetdb.io/api/v1/rg2nc13r6scnv" id="sheetdb-form">
 <div class="back">
-<input type="text" placeholder="type message . . ." name="data[id]"><button type="submit" onclick="showMessage()">sent</button>
+	<div class="ok">
+<input type="text" placeholder="type message . . ." name="data[id]"><button type="submit" onclick="showMessage()"><Img style="position: absolute; top:10px;" SRC="Send_Icon_039jcs.svg"></button>
+</div>
 </div>
 </form>
 <script>
@@ -80,15 +82,13 @@ background: #488F00;
 background-color:#488F00;
 }
 		.back{
-			background: #4A9400;
+			background: #488F00;
 			border-radius: 10px;
-			padding: 6px;
-			text-align: center;
+			padding: 6px 0px 6px 0px;
 			position: fixed;
 			left:10;
 			right:10;
 			bottom:5;
-			
 			}
 			.mainmenubtn {
     border: none;
@@ -118,24 +118,22 @@ background-color:#488F00;
     display: block;
 }
 		input{
-			border: 2px solid #112100;
-			background: none;
-			padding: 5px 10px;
-			color: white;
+			border:none;
+			background: #488F00;
+			padding:5px;
+			color: black;
 			font-size: 18px;
-			margin: 0px 0px 0px 5px;
 			border-radius: 5px 0px 0px 5px;
 			outline: none;
 			}
+			input::placeholder {
+				color: black;
+				font-weight:300;
+				}
 			button{
-				color: #112100;
-				background: none;
+				background:none;
 				outline: none;
-				font-weight: 600;
-				border: 2px solid #112100;
-				border-radius: 0px 5px 5px 0px;
-				padding: 5px 10px;
-				font-size: 18px;
+				border:none;
 				}
 				.fixed-header:nth-of-type(1){
 					position: relative;
@@ -180,5 +178,13 @@ background-color:#488F00;
             right:40px;
             height:50px;
         }
+        .ok{
+        	float:top;
+        margin-left:30px;
+        margin-right:30px;
+        padding:2px;
+        	border: 2px solid black;
+        border-radius:10px;
+        	}
 	</style>
-	</html>
+</html>
