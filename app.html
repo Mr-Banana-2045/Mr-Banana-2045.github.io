@@ -1,4 +1,4 @@
-<html>
+<html lang="fa">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
@@ -7,14 +7,7 @@
 	<center>
 	<div class="fixed-header">
 		<div class="p">
-		<div class="dropdown">
-	<img class="mainmenubtn" src="menu-icon-19353.png">
-		<div class="dropdown-child">
-<a href="help.html">help</a>
-<a href="https://GitHub.com/Mr-Banana-2045">GitHub</a></div></div>
-<div class="goz">
-<p>unknown chat <Img src="25231.png"></p>
-</div>
+	<a style="position: absolute; right:10px;" href="http://Mr-Banana-2045.github.io/help.html"><Img SRC="help_2.svg"></a><p style="position: absolute; left:10px; top:-12px;">unknown chat</p>
 	</div>
 	</div>
 	</center>
@@ -24,15 +17,18 @@
          data-sheetdb-sort-by="age"
   data-sheetdb-sort-order="desc">
     <tr class="td_cli">
-    	<TD class="td_nam"><Img src="https://icons-for-free.com/iconfiles/png/512/alien+head+fantastic+green+mask+sci+fi+ufo+unknown+icon-1320196800484593484.png"/></TD>
+    	<TD class="td_nam">
+<Img class="Img" src="https://icons-for-free.com/iconfiles/png/512/alien+head+fantastic+green+mask+sci+fi+ufo+unknown+icon-1320196800484593484.png">
+</TD>
       <td class="td_nam">unknown : {{id}}</td>
     </tr>
   </tbody>
 </table>
+<div id="message">sending...</div>
 </div>
 <form method="post" action="https://sheetdb.io/api/v1/rg2nc13r6scnv" id="sheetdb-form">
 <div class="back">
-<input type="text" placeholder="type message . . ." name="data[id]"><button type="submit" type="button">sent</button>
+<input type="text" placeholder="type message . . ." name="data[id]"><button type="submit" onclick="showMessage()">sent</button>
 </div>
 </form>
 <script>
@@ -49,12 +45,15 @@
     });
   });
 </script>
+<script>
+	function showMessage() {
+            var messageDiv = document.getElementById("message");
+            messageDiv.style.display = "block";
+        }
+	</script>
 <script src="https://sheetdb.io/handlebars.js"></script>
 <style>
-	.goz{
-		padding: 1px;
-		}
-	Img{
+	.Img{
 		height: 20px;
 	}
 	body{
@@ -62,7 +61,7 @@
 		font-family: Arial, Helvetica, sans-serif;
 		}
 		.mol{
-    height:610px;
+    height:670px;
     overflow-y:scroll;
 			}
 			.mol::-webkit-scrollbar-track {
@@ -79,13 +78,17 @@ background: #488F00;
 }
 .mol::-webkit-scrollbar-button{
 background-color:#488F00;
-
 }
 		.back{
 			background: #4A9400;
 			border-radius: 10px;
 			padding: 6px;
 			text-align: center;
+			position: fixed;
+			left:10;
+			right:10;
+			bottom:5;
+			
 			}
 			.mainmenubtn {
     border: none;
@@ -139,10 +142,11 @@ background-color:#488F00;
 					font-weight: 500;
 					}
 		.p{
-			text-align:center;
-			padding: 6px 6px 0px 6px;
-			border-radius: 10px;
+			margin:0px 0px 2px 0px;
+			height:30px;
 			font-size:20px;
+			padding: 6px;
+			border-radius: 10px;
 			background: #4A9400;
 			color: black;
 			}
@@ -155,6 +159,26 @@ background-color:#488F00;
 						border-radius: 10px;
 						padding: 5px 10px;
 						color: green;
+						float:left;
+						margin-left:5px;
 						}
+						#message {
+            font-size: 20px;
+            margin-top: 20px;
+            display: none;
+            color:white;
+            padding:5px;
+            border-radius:20px;
+            padding-top:5%;
+            font-size:25px;
+            font-weight:500;
+            padding-left:25%;
+            background: green;
+            position: fixed;
+            top:40%;
+            left:40px;
+            right:40px;
+            height:50px;
+        }
 	</style>
 	</html>
