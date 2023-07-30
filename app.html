@@ -27,9 +27,10 @@
 <div id="message">sending...</div>
 </div>
 <form method="post" action="https://sheetdb.io/api/v1/rg2nc13r6scnv" id="sheetdb-form">
+<div id="emoji-container"></div>
 <div class="back">
 	<div class="ok">
-<input type="text" placeholder="type message . . ." name="data[id]"><button type="submit" onclick="showMessage()"><Img style="position: absolute; top:10px;" SRC="Send_Icon_039jcs.svg"></button>
+<Img onclick="on()" style="position: relative; top:5px;" SRC="aliens-icon.svg"><input type="text" placeholder="type message . . ." name="data[id]" id="text-editor"><button class="button" type="submit" onclick="showMessage()"><Img style="position: absolute; top:12px;" SRC="Send_Icon_039jcs.svg"></button>
 </div>
 </div>
 </form>
@@ -53,6 +54,24 @@
             messageDiv.style.display = "block";
         }
 	</script>
+	<script>
+const emojiContainer = document.getElementById('emoji-container');
+const textEditor = document.getElementById('text-editor');
+
+function on(){
+const emojis = ['😃', '🥰', '😊', '😎', '😂', '🍌'];
+
+emojis.forEach((emoji) => {
+  const emojiElement = document.createElement('span');
+  emojiElement.innerHTML = emoji;
+  emojiElement.classList.add('emoji');
+  emojiElement.addEventListener('click', () => {
+    textEditor.value += emoji;
+  });
+  emojiContainer.appendChild(emojiElement);
+});
+}
+</script>
 <script src="https://sheetdb.io/handlebars.js"></script>
 <style>
 	.Img{
@@ -121,6 +140,8 @@ background-color:#488F00;
 			border:none;
 			background: #488F00;
 			padding:5px;
+			position: relative;
+			top:-2px;
 			color: black;
 			font-size: 18px;
 			border-radius: 5px 0px 0px 5px;
@@ -130,11 +151,16 @@ background-color:#488F00;
 				color: black;
 				font-weight:300;
 				}
-			button{
+			.button{
 				background:none;
 				outline: none;
 				border:none;
 				}
+				.but {
+					background:none;
+					border:none;
+					outline: none;
+					}
 				.fixed-header:nth-of-type(1){
 					position: relative;
 					font-weight: 500;
@@ -180,11 +206,24 @@ background-color:#488F00;
         }
         .ok{
         	float:top;
-        margin-left:30px;
-        margin-right:30px;
+        margin-left:20px;
+        margin-right:20px;
         padding:2px;
         	border: 2px solid black;
         border-radius:10px;
         	}
+        #emoji-container {
+  display: flex;
+  cursor: pointer;
+  position: fixed;
+  bottom:63px;
+  left:10px;
+  background: #488F00;
+  font-size:25px;
+  border-radius:10px;
+}
+span{
+	padding:5px;
+	}
 	</style>
 </html>
