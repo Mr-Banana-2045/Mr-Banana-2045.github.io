@@ -1,0 +1,151 @@
+<html lang="en">
+	<head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
+    <style>
+    	body {
+    	background: black;
+    color:none;
+display: none;
+}
+@media only screen and (max-width: 600px) {
+body {
+display: block;
+}}
+input{
+	outline: none;
+	border:none;
+	background:black;
+	padding: 10px;
+	position: relative;
+	width:85%;
+	top:-4px;
+	color:white;
+	border-radius: 10px 0px 0px 10px;
+	}
+	input::placeholder {
+		color: #00FCFF;
+		font-size:17px;
+		}
+	button{
+		outline:none;
+		background:black;
+		padding:10px;
+		border:none;
+		}
+		.people{
+			border: 2px solid #00FCFF;
+			border-radius:10px;
+			margin:5px;
+			padding:5px;
+			height:80px;
+			width:350px;
+			}
+			.Img{
+				height:80px;
+				width:80px;
+				border-radius:10px;
+				}
+				.mol{
+					position: relative;
+					top:60px; 
+    height:560px;
+    overflow-y:scroll;
+			}
+			.mol::-webkit-scrollbar-track {
+background: nano;
+}
+.mol::-webkit-scrollbar {
+width: 1px;
+}
+.mol::-webkit-scrollbar-thumb {
+background: #00FCFF;
+}
+.mol::-webkit-scrollbar-thumb:hover {
+background: #00FCFF;
+}
+.mol::-webkit-scrollbar-button{
+background-color:#00FCFF;
+}
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 10px solid #00FCFF;
+  border-top: 10px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+	</style>
+</head> 
+<body>
+	<center>
+		<Img style="height:20%; width:35%;" SRC="Peop.png">
+		<div style="border: 2px solid #00FCFF; border-radius:14px 14px 14px 14px; position: absolute; left:5%; right:5%;">
+    <input id="searchbar" type="search" placeholder="search ...."><button onclick="search()" id="loadingButton"><Img SRC="search.svg"></button>
+    </div>
+    </center>
+    <center>
+    	<div class="mol" style="visibility:hidden;" id="result">
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="Mohamad.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Mohamad</a></p><p style="float:left; margin-left:30px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Rezai</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989156074478</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">18</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1383/02/9</a></p><p style="float:left; margin-left:36px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Tehran</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="amin.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Amin</a></p><p style="float:left; margin-left:10px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Mohammadi</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989192851071</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">26</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1375/15/12</a></p><p style="float:left; margin-left:20px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Mashhad</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="hamed.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Hamed</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Majidi</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989128428063</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">33</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1368/07/07</a></p><p style="float:left; margin-left:17px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Hamedan</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="reza.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Reza</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Jamshidi</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989339642480</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">19</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1383/01/23</a></p><p style="float:left; margin-left:44px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">ghom</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="mahan.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Mahan</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Khorasani</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989156874368</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">46</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1355/04/19</a></p><p style="float:left; margin-left:36px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Ardabil</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="ali.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Ali</a></p><p style="float:left; margin-left:60px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Ghafori</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989157971701</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">32</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1369/10/24</a></p><p style="float:left; margin-left:18px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Mashhad</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="arezoo.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Arezoo</a></p><p style="float:left; margin-left:30px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Hashemi</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989127510743</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">23</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1380/05/30</a></p><p style="float:left; margin-left:36px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Tehran</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="yasaman.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Yasaman</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Karimi</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989226419820</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">18</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1384/02/20</a></p><p style="float:left; margin-left:52px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Yazd</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="sara.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Sara</a></p><p style="float:left; margin-left:67px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Taheri</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989218513293</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">35</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1366/06/24</a></p><p style="float:left; margin-left:36px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Bushehr</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="zinab.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Zainab</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Amiri</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989253717265</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">29</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1372/08/26</a></p><p style="float:left; margin-left:55px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Kish</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="lale.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Lale</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Goldadeh</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989216518929</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">25</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1376/06/07</a></p><p style="float:left; margin-left:36px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Tehran</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="rihane.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Reyhaneh</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Shakri</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989182980187</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">43</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1358/09/27</a></p><p style="float:left; margin-left:30px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Kerman</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="homira.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Hamira</a></p><p style="float:left; margin-left:20px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Jalili</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989307516426</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">27</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1374/10/30</a></p><p style="float:left; margin-left:42px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Shiraz</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="noora.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Nora</a></p><p style="float:left; margin-left:39px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Khatami</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989153635442</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">31</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1370/07/22</a></p><p style="float:left; margin-left:33px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Gorgan</a></p></div>
+        <div class="people"><Img class="Img" style="float:left; margin-left:2px;" SRC="aida.jpg"><p style="float:left; margin-left:5px; margin-top:5px; color:#00FCFF;">name: <a style="color:white;">Aida</a></p><p style="float:left; margin-left:46px; margin-top:5px; color:#00FCFF;">family: <a style="color:white;">Esmaeili</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">number: <a style="color:white;">+989209742627</a></p><p style="float:left; margin-left:10px; margin-top:-8px; color:#00FCFF;">age: <a style="color:white;">41</a></p><br><p style="float:left; margin-left:5px; margin-top:-8px; color:#00FCFF;">deta: <a style="color:white;">1360/10/27</a></p><p style="float:left; margin-left:30px; margin-top:-8px; color:#00FCFF;">city: <a style="color:white;">Shamal</a></p></div>
+        <p id="er" style="color:#00FCFF; text-align:center; font-size:20px;"></p>
+    </div>
+    </center>
+    <div id="loadingOverlay">
+    <div class="loader"></div></div>
+    <script>
+function search() {
+	var loadingOverlay = document.getElementById("loadingOverlay");
+	document.getElementById("result").style.visibility = "visible";
+    let input = document.getElementById('searchbar').value 
+    input=input.toLowerCase(); 
+    let x = document.getElementsByClassName('people');
+    loadingOverlay.style.display = "flex";
+  setTimeout(function() {
+    loadingOverlay.style.display = "none";
+  }, 1000);
+    for (i = 0; i < x.length; i++) {  
+        if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+            x[i].style.display="none"; 
+            const resultElement = document.getElementById("er");
+        } 
+        else { 
+            x[i].style.display="list-item";
+const resultElement = document.getElementById("er");
+                  resultElement.innerText= "...";      
+        } 
+    } 
+} 
+</script> 
+</body> 
+	</html>
