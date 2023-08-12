@@ -1,4 +1,3 @@
-
 <?php
 // خواندن محتوای فایل JSON
 $jsonData = file_get_contents("data.json");
@@ -20,12 +19,12 @@ foreach ($data["people"] as $person) {
 
 // بررسی یافتن یا عدم یافتن فرد
 if ($foundPerson) {
-  // تبدیل اطلاعات فرد به JSON و ارسال به عنوان پاسخ
-  header("Content-Type: application/json");
-  echo json_encode($foundPerson);
+  // نمایش اطلاعات فرد
+  echo "Name: " . $foundPerson["name"] . "<br>";
+  echo "Age: " . $foundPerson["age"] . "<br>";
+  echo "Email: " . $foundPerson["email"] . "<br>";
 } else {
   // ارسال پیام خطا به عنوان پاسخ
-  header("HTTP/1.1 404 Not Found");
   echo "Person not found";
 }
 ?>
