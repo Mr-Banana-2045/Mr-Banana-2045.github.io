@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="message-input" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            var message = $("#message-input").val();
+            $.ajax({
+                url: "send_message.php",
+                type: "POST",
+                data: { message: message },
+                success: function(response) {
+                    $("#message-input").val("");
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            setInterval(function() {
+                $.ajax({
+                    url: "get_messages.php",
+                    type: "GET",
+                    dataType: "json",
+                    success: function(response) {
+                        var messages = response.messages;
+                        var html = "";
+                        for (var i = 0; i < messages.length; i++) {
+                            html += "<p>" + messages[i].username + ": " + messages[i].message + "</p>";
+                        }
+                        $("#chat-messages").html(html);
+                    }
+                });
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
