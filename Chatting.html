@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,14 +29,8 @@
                 $.ajax({
                     url: "get_messages.php",
                     type: "GET",
-                    dataType: "json",
                     success: function(response) {
-                        var messages = response.messages;
-                        var html = "";
-                        for (var i = 0; i < messages.length; i++) {
-                            html += "<p>" + messages[i].username + ": " + messages[i].message + "</p>";
-                        }
-                        $("#chat-messages").html(html);
+                        $("#chat-messages").html(response);
                     }
                 });
             }, 1000);
