@@ -1,0 +1,137 @@
+<html lang="fa">
+	<title>news</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
+	<meta  charset="utf-8" />
+	<body>
+		<code>
+			<div class="go">
+		<h1>News</h1><p style="position: absolute; right:20px; top:5px; font-size:20px;" id="bot">👤</p>
+		</div>
+		<div style="margin-top:50px;">
+<table>
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/fl71dpwf0svgb"
+         data-sheetdb-sort-by="age"
+  data-sheetdb-sort-order="desc">
+  	<tr class="td_cli">
+      <td><Img SRC="{{img}}" style="float:right; border-radius:5px; position: absolute; right:0px;" height="100px" width="100px"><p align="right" style="position: absolute; right:110px; float:right; font-size:13px; font-weight:700;">{{text}}<p><a href="{{url}}" style="float:left; position: relative; bottom:-70px; left:5px;">ادامه مطالب</a></td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<button id="bottomButton" style="display: none;">top</button>
+<div id="dialog">
+        <h2>login admin</h2>
+        <input type="password" id="passwordInput" placeholder="Enter password ...">
+        <br>
+        <button id="submitButton">login</button>
+        <p id="errorMessage" style="color: red; display: none;">The password is incorrect</p>
+    </div>
+</code>
+</body>
+<script src="https://sheetdb.io/handlebars.js"></script>
+<style>
+	body {
+		background:#DCDCDC;
+		}
+		.td_cli{
+			background: white;
+			border:1px solid black;
+			border-radius:5px;
+			position: relative;
+			right:10px;
+			left:10px;
+			width:350px;
+			height:102px;
+			display: flex;
+			margin-top:5px;
+			}
+			.go{
+			color:white;
+			padding:5px;
+			text-align:center;
+			position: fixed;
+			left:0;
+			right:0;
+			height:60px;
+			top:-22px;
+			background: gray;
+			}
+			#bottomButton {
+            position: fixed;
+            bottom:20px;
+            right:10px;
+            padding:10px;
+            height:50px;
+            width:80px;
+            background-color: gray;
+            color: white;
+            outline:none;
+            border:none;
+            font-weight:500;
+            font-size:15px;
+            border-radius:10px;
+            cursor: pointer;
+        }
+        input[type="password"]{
+							margin-top:5px;
+							outline:none;
+							color:black;
+							border-radius: 5px;
+							background:none;
+							border:2px solid gray;
+							}
+        #submitButton{
+					color:white;
+					background: gray;
+					outline:none;
+					border:none;
+					padding:5px;
+					width:200px;
+					
+					font-size:15px;
+					border-radius:5px;
+					font-weight:500;
+					margin-top:10px;
+					}
+        #dialog {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            border-radius:10px;
+            padding: 20px;
+            background-color: #DCDCDC;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+	</style>
+	<script>
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 0) {
+                document.getElementById('bottomButton').style.display = 'block';
+            } else {
+                document.getElementById('bottomButton').style.display = 'none';
+            }
+        });
+        document.getElementById('bottomButton').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script>
+        var expectedPassword = "moz";
+
+        document.getElementById('bot').addEventListener('click', function() {
+            document.getElementById('dialog').style.display = 'block';
+        });
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var passwordInput = document.getElementById('passwordInput').value;
+            if (passwordInput === expectedPassword) {
+                window.location.href = "https://Mr-Banana-2045.github.io/admin.html";
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+</html>
