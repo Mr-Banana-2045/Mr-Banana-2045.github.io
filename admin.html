@@ -9,19 +9,20 @@
 <form method="post" action="https://sheetdb.io/api/v1/fl71dpwf0svgb" id="sheetdb-form">
 	<div class="ok">
 		<center>
-<label>Add news image: <label class="file-input-wrapper"><input type="file" name="data[img]"><span>upload</span></label></label><br>
+<label>Add news image: <input type="text" name="data[img]"></label><br>
 <label>Add news message: <input type="text" name="data[text]"></label><br>
 <label>Add news address: <input type="text" name="data[url]"></label><br>
-<button class="button" type="submit">post</button>
+<button class="button" type="submit" onclick="showMessage()">post</button>
 </div>
 </center>
 </form>
+<div id="message">sending...</div>
 </code>
 <script src="https://sheetdb.io/handlebars.js"></script>
 </body>
 <style>
 	body{
-		background:#D497FF;
+		background:#DCDCDC;
 		}
 		h1{
 			color:white;
@@ -45,51 +46,61 @@
 					border:none;
 					padding:5px;
 					width:200px;
-					
 					font-size:15px;
 					border-radius:5px;
 					font-weight:500;
 					margin-top:10px;
 					}
 					label{
-						color:white;
+						color:black;
 						font-weight:500;
 						margin-left:10px;
 						}
 						input[type="text"]{
 							margin-top:5px;
 							outline:none;
-							color:white;
+							color:black;
 							border-radius: 5px;
 							background:none;
 							border:2px solid gray;
-							}
-							   .file-input-wrapper {
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-        }
-
-        .file-input-wrapper input[type="file"] {
-            font-size: 100px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .file-input-wrapper span {
-            display: inline-block;
-            padding: 5px;
-            background-color: gray;
-            color: white;
-            width:180px;
-            margin-left:5px;
-            border-radius: 5px;
-            cursor: pointer;
+						}
+						#message {
+            font-size: 20px;
+            margin-top: 20px;
+            display: none;
+            color:white;
+            padding:5px;
+            border-radius:20px;
+            padding-top:5%;
+            font-size:25px;
+            font-weight:500;
+            padding-left:25%;
+            background: gray;
+            position: fixed;
+            top:40%;
+            left:40px;
+            right:40px;
+            height:50px;
         }
 	</style>
+	<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      window.location.href = 'http://Mr-Banana-2045.github.io/news.html';
+    });
+  });
+</script>
+<script>
+	function showMessage() {
+            var messageDiv = document.getElementById("message");
+            messageDiv.style.display = "block";
+        }
+	</script>
 </html>

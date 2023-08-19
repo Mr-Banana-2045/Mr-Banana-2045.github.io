@@ -8,6 +8,7 @@
 		<h1>News</h1><p style="position: absolute; right:20px; top:5px; font-size:20px;" id="bot">👤</p>
 		</div>
 		<div style="margin-top:50px;">
+			<p style="position: absolute; left:50px;">Wait until the data is processed ...</p>
 <table>
   <tbody data-sheetdb-url="https://sheetdb.io/api/v1/fl71dpwf0svgb"
          data-sheetdb-sort-by="age"
@@ -20,6 +21,7 @@
 </div>
 <button id="bottomButton" style="display: none;">top</button>
 <div id="dialog">
+	<button id="closeButton" style="background:none; outline:none; border:none; position: absolute; left:5; font-size:25px;">×</button>
         <h2>login admin</h2>
         <input type="password" id="passwordInput" placeholder="Enter password ...">
         <br>
@@ -49,7 +51,7 @@
 			color:white;
 			padding:5px;
 			text-align:center;
-			position: fixed;
+			position: absolute;
 			left:0;
 			right:0;
 			height:60px;
@@ -121,7 +123,9 @@
     </script>
     <script>
         var expectedPassword = "moz";
-
+        document.getElementById('closeButton').addEventListener('click', function() {
+    document.getElementById('dialog').style.display = 'none';
+});
         document.getElementById('bot').addEventListener('click', function() {
             document.getElementById('dialog').style.display = 'block';
         });
@@ -132,6 +136,6 @@
             } else {
                 document.getElementById('errorMessage').style.display = 'block';
             }
-        });
+});
     </script>
 </html>
