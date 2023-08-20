@@ -12,6 +12,7 @@
 <label>Add news image: <input type="text" name="data[img]"></label><br>
 <label>Add news message: <input type="text" name="data[text]"></label><br>
 <label>Add news address: <input type="text" name="data[url]"></label><br>
+<label>Add news date: <input type="date" name="data[date]"></label><br>
 <button class="button" type="submit" onclick="showMessage()">post</button>
 </div>
 </center>
@@ -64,6 +65,16 @@
 							background:none;
 							border:2px solid gray;
 						}
+						input[type="date"]{
+							background:none;
+							color:black;
+							border:2px solid gray;
+							border-radius: 5px;
+							outline:none;
+							height:22px;
+							margin-top:5px;
+							width:180px;
+							}
 						#message {
             font-size: 20px;
             margin-top: 20px;

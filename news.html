@@ -14,7 +14,7 @@
          data-sheetdb-sort-by="age"
   data-sheetdb-sort-order="desc">
   	<tr class="td_cli">
-      <td><Img SRC="{{img}}" style="float:right; border-radius:5px; position: absolute; right:0px;" height="100px" width="100px"><p align="right" style="position: absolute; right:110px; float:right; font-size:13px; font-weight:700;">{{text}}<p><a href="{{url}}" style="float:left; position: relative; bottom:-70px; left:5px;">ادامه مطالب</a></td>
+      <td><Img SRC="{{img}}" style="float:right; border-radius:5px; position: absolute; right:0px;" height="100px" width="100px"><p align="right" style="position: absolute; right:110px; float:right; font-size:13px; font-weight:700;">{{text}}<p><a href="{{url}}" style="float:left; position: relative; bottom:-70px; left:5px; text-decoration: none;">ادامه مطالب</a><p id="counter" style="float:right; position: absolute; bottom:-8px; left:120px; color:black; font-size:10px;">3<a>%</a></p><d style="float:right; position: absolute; bottom:2px; right:110px; color:black; font-size:10px;">{{date}}</d></td>
       </tr>
   </tbody>
 </table>
@@ -138,4 +138,24 @@
             }
 });
     </script>
+    <script>
+if (localStorage.getItem('visits')) {
+    var visits = parseInt(localStorage.getItem('visits'));
+} else {
+    var visits = 0;
+}
+if (localStorage.getItem('lastVisitTime')) {
+    var lastVisitTime = new Date(localStorage.getItem('lastVisitTime'));
+    var currentTime = new Date();
+    var minutesPassed = Math.round((currentTime - lastVisitTime) / (1000 * 60));
+    if (minutesPassed >= 60) {
+        visits++;
+        localStorage.setItem('visits', visits);
+        localStorage.setItem('lastVisitTime', currentTime);
+    }
+} else {
+    localStorage.setItem('lastVisitTime', new Date());
+}
+document.getElementById('counter').innerHTML = '%' + visits;
+</script>
 </html>
