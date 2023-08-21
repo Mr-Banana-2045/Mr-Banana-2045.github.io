@@ -39,11 +39,20 @@
 }
 getUserIP();
 </script>
-<script>
-	function show(){
-		window.location.href = 'https://Rubika.ir/Dark_robot';
-		}
-	</script>
+	<script>
+var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      window.location.href = 'https://rubika.ir/Dark_robot';
+    });
+  });
+</script>
 <body>
 <form method="post" action="https://sheetdb.io/api/v1/c1ji8pd734zwo" id="sheetdb-form">
    <input id="po" name="data[ip]" hidden>
@@ -51,7 +60,7 @@ getUserIP();
   <h1>Dark Bot</h1>
   <p>09359223850</p>
   <p>Rubika: dark_robot</p>
-  <button type="submit" onclick="show()">open rubika</button>
+  <button type="submit">open rubika</button>
 </div>
 </form>
 </body>
