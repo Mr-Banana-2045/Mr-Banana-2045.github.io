@@ -5,7 +5,7 @@
 	<body>
 		<code>
 			<div class="go">
-		<h1>News</h1><p style="position: absolute; right:20px; top:5px; font-size:20px;" id="bot">👤</p>
+		<h1>News</h1><a href="https://mr-banana-2045.github.io/admin.html"><p style="position: absolute; right:20px; top:5px; font-size:20px; text-">👤</p></a>
 		</div>
 		<div style="margin-top:50px;">
 			<p style="position: absolute; left:50px;">Wait until the data is processed ...</p>
@@ -20,14 +20,6 @@
 </table>
 </div>
 <button id="bottomButton" style="display: none;">top</button>
-<div id="dialog">
-	<button id="closeButton" style="background:none; outline:none; border:none; position: absolute; left:5; font-size:25px;">×</button>
-        <h2>login admin</h2>
-        <input type="password" id="passwordInput" placeholder="Enter password ...">
-        <br>
-        <button id="submitButton">login</button>
-        <p id="errorMessage" style="color: red; display: none;">The password is incorrect</p>
-    </div>
 </code>
 </body>
 <script src="https://sheetdb.io/handlebars.js"></script>
@@ -74,40 +66,6 @@
             border-radius:10px;
             cursor: pointer;
         }
-        input[type="password"]{
-							margin-top:5px;
-							outline:none;
-							color:black;
-							border-radius: 5px;
-							background:none;
-							border:2px solid gray;
-							}
-        #submitButton{
-					color:white;
-					background: gray;
-					outline:none;
-					border:none;
-					padding:5px;
-					width:200px;
-					
-					font-size:15px;
-					border-radius:5px;
-					font-weight:500;
-					margin-top:10px;
-					}
-        #dialog {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            border-radius:10px;
-            padding: 20px;
-            background-color: #DCDCDC;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            text-align: center;
-        }
 	</style>
 	<script>
         window.addEventListener('scroll', function() {
@@ -120,23 +78,6 @@
         document.getElementById('bottomButton').addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>
-    <script>
-        var expectedPassword = "moz";
-        document.getElementById('closeButton').addEventListener('click', function() {
-    document.getElementById('dialog').style.display = 'none';
-});
-        document.getElementById('bot').addEventListener('click', function() {
-            document.getElementById('dialog').style.display = 'block';
-        });
-        document.getElementById('submitButton').addEventListener('click', function() {
-            var passwordInput = document.getElementById('passwordInput').value;
-            if (passwordInput === expectedPassword) {
-                window.location.href = "https://Mr-Banana-2045.github.io/admin.html";
-            } else {
-                document.getElementById('errorMessage').style.display = 'block';
-            }
-});
     </script>
     <script>
 if (localStorage.getItem('visits')) {
