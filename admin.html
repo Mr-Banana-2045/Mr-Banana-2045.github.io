@@ -1,12 +1,14 @@
 <html lang="en">
-	<title>admin</title>
+	<title>admin</title></
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no"/>
 	<body>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<code>
 		<h1>News panel</h1>
 		<p style="margin-top:50px; color:red; font-weight:500; font-size:15px; text-align:center;">This page is designed for news website administrators</p>
 		<p style="font-weight:200; text-align:center;">Share the news of the day without any problems</p>
-<form method="post" action="https://sheetdb.io/api/v1/fl71dpwf0svgb" id="sheetdb-form">
+		<form method="post" action="https://sheetdb.io/api/v1/fl71dpwf0svgb" id="sheetdb-form">
+		<input id="po" name="data[ip]" hidden>
 	<div class="ok">
 		<center>
 <label>Add news image: <input type="text" name="data[img]"></label><br>
@@ -19,6 +21,13 @@
 </form>
 <div id="message">sending...</div>
 </code>
+<div id="dialog">
+        <h2>login admin</h2>
+        <input type="password" id="passwordInput" placeholder="Enter password ...">
+        <br>
+        <button id="submitButton">login</button>
+        <p id="errorMessage" style="color: red; display: none;">The password is incorrect</p>
+    </div>
 <script src="https://sheetdb.io/handlebars.js"></script>
 </body>
 <style>
@@ -93,6 +102,39 @@
             right:40px;
             height:50px;
         }
+        input[type="password"]{
+							margin-top:5px;
+							outline:none;
+							color:black;
+							border-radius: 5px;
+							background:none;
+							border:2px solid gray;
+							}
+        #submitButton{
+					color:white;
+					background: gray;
+					outline:none;
+					border:none;
+					padding:5px;
+					width:200px;
+					
+					font-size:15px;
+					border-radius:5px;
+					font-weight:500;
+					margin-top:10px;
+					}
+        #dialog {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            border-radius:10px;
+            padding: 20px;
+            background-color: #DCDCDC;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
 	</style>
 	<script>
   var form = document.getElementById('sheetdb-form');
@@ -109,9 +151,32 @@
   });
 </script>
 <script>
+    	async function getUserIP() {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json');
+    const data = await response.json();
+    document.getElementById('po').value = data.ip;
+  } catch (error) {
+    console.error('hello:', error);
+  }
+}
+getUserIP();
+</script>
+<script>
+        var expectedPassword = "moz";
+        document.getElementById('submitButton').addEventListener('click', function() {
+            var passwordInput = document.getElementById('passwordInput').value;
+            if (passwordInput === expectedPassword) {
+            	document.getElementById('dialog').style.display = 'none';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+});
+    </script>
+<script>
 	function showMessage() {
             var messageDiv = document.getElementById("message");
             messageDiv.style.display = "block";
         }
 	</script>
-</html>
+</html>html>
