@@ -1,0 +1,232 @@
+<html>
+	<title>login design</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<body>
+		<div class="fr">
+		<form>
+			<code>
+			<h1>Login Design</h1>
+		<label class="lab1"> your name </label>
+		<input type="text" required oninvalid="this.setCustomValidity('you name ?')" oninput="this.setCustomValidity('')">
+			<label class="lab2"> your email </label>
+				<input type="email" required oninvalid="this.setCustomValidity('you email ?')" oninput="this.setCustomValidity('')">
+					<label class="lab3"> your number </label>
+					<label class="num"> +98 </label>
+					<input type="number" placeholder="" required oninvalid="this.setCustomValidity('you number ?')" oninput="this.setCustomValidity('')">
+<label class="lab4"> your password </label>
+		<input type="password" id="pass" oninput="ok()" required oninvalid="this.setCustomValidity('you password ?')" oninput="this.setCustomValidity('')">
+			<label class="lab5"> repeat password </label>
+		<input class="pas" type="text" id="tepass"><br>
+			<button type="submit">login</button>
+			</code>
+			</form>
+			<div>
+</body>
+<script>
+	pass.oninput = showVal;
+	function showVal(){
+		tepass.value = this.value;
+		}
+	</script>
+	<style>
+			@media only screen and (max-width: 600px) {
+body {
+display: block;
+}}
+@media (prefers-color-scheme:light){
+	body{
+	background: white;
+	text-align:center;
+	}
+	.lab1{
+				position: absolute;
+				top:160px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				background:white;
+				}
+				.lab2{
+				position: absolute;
+				top:225px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				background:white;
+				}
+				.lab3{
+				position: absolute;
+				top:290px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				background:white;
+				}
+				.num{
+					position: absolute;
+				top:310px;
+				left: 78px;
+				padding-top:1px;
+				font-size: 16px;
+				font-weight: 300;
+					}
+				.lab4{
+				position: absolute;
+				top:355px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				background:white;
+				}
+				.lab5{
+				position: absolute;
+				top:420px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				background:white;
+					}
+					button{
+						background: black;
+						color: white;
+						padding: 13px;
+						width: 250px;
+						font-size:15px;
+						outline:none;
+						border:none;
+						border-radius: 10px;
+						margin-top: 20px;
+						}
+						 input[type="text"],input[type="email"],input[type="password"]{
+					color:black;
+					border: 2px solid black;
+					outline: none;
+					margin-top: 20px;
+					border-radius: 10px;
+					padding-left: 10px;
+					font-size:15px;
+					height:45px;
+					background:none;
+					width:250px;
+					}
+					input[type="number"]{
+					color:black;
+					border: 2px solid black;
+					outline: none;
+					margin-top: 20px;
+					border-radius: 10px;
+					background:none;
+					padding-left: 40px;
+					font-size:15px;
+					height:45px;
+					width:250px;
+					}
+					input::Selection {
+						background: black;
+						color:white;
+						}
+	}
+@media (prefers-color-scheme:dark){
+		body{
+		background:black;
+		text-align:center;
+		}
+		 input[type="text"],input[type="email"],input[type="password"]{
+					color:white;
+					border: 2px solid white;
+					outline: none;
+					margin-top: 20px;
+					border-radius: 10px;
+					padding-left: 10px;
+					font-size:15px;
+					height:45px;
+					background:none;
+					width:250px;
+					}
+					input[type="number"]{
+					color:white;
+					border: 2px solid white;
+					outline: none;
+					margin-top: 20px;
+					border-radius: 10px;
+					background:none;
+					padding-left: 40px;
+					font-size:15px;
+					height:45px;
+					width:250px;
+					}
+		.lab1{
+				position: absolute;
+				top:160px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				color: white;
+				background: black;
+				}
+				.lab2{
+				position: absolute;
+				top:225px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				background: black;
+				color: white;
+				}
+				.lab3{
+				position: absolute;
+				top:290px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				color: white;
+				background: black;
+				}
+				.num{
+					position: absolute;
+				top:310px;
+				left: 78px;
+				padding-top:1px;
+				font-size: 16px;
+				color: white;
+				font-weight: 300;
+					}
+				.lab4{
+				position: absolute;
+				top:355px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				color: white;
+				background: black;
+				}
+				.lab5{
+				position: absolute;
+				top:420px;
+				padding-left: 2px;
+				padding-right: 2px;
+				left: 90px;
+				color: white;
+				background: black;
+					}
+					button{
+						background: white;
+						color: black;
+						padding: 13px;
+						width: 250px;
+						font-size:15px;
+						outline:none;
+						border:none;
+						border-radius: 10px;
+						margin-top: 20px;
+						}
+						input::Selection {
+						background: white;
+						color: black;
+						}
+	}
+		.fr{
+			margin-top:100px;
+			}
+		</style>
+	</html>
