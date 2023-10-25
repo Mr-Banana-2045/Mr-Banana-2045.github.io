@@ -1,0 +1,26 @@
+<meta http-equiv="refresh" content="2">
+<body onload="changeBackground()">
+	<script>
+		var backgrounds = [
+      'red',
+      'blue',
+      'orange',
+      'green',
+ ];
+
+    function changeBackground() {
+      var randomIndex = Math.floor(Math.random() * backgrounds.length);
+      var randomBackground = backgrounds[randomIndex];
+      document.body.style.background = randomBackground;
+    }
+</script>
+<style>
+	body {
+      background: green;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Vazir;
+      overflow: hidden;
+    }
+</style>
+	</body>
