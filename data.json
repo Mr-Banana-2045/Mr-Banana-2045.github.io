@@ -1,19 +1,34 @@
 {
-  "people": [
+  "data": [
     {
-      "name": "John",
+      "name": "محمد",
+      "family": "جباریان",
       "age": 25,
-      "email": "john@example.com"
+      "phone": "+989196480865",
+      "location": "Iran, bojnord, jamalii 11",
+      "codemeli": "0926514792876",
+      "email": "mohamad00@gmail.com",
+      "password": "mohamadjab25"
     },
     {
-      "name": "Jane",
+      "name": "علی",
+      "family": "نوروزی",
       "age": 30,
-      "email": "jane@example.com"
+      "phone": "+989186075579",
+      "location": "Iran, mashhad, amirieh 12",
+      "codemeli": "0927519737558",
+      "email": "ali80098@gmail.com",
+      "password": "alialinorozii123"
     },
     {
-      "name": "Mike",
+      "name": "رضا",
+      "family": "صادقی",
       "age": 35,
-      "email": "mike@example.com"
+      "phone": "+989176072875",
+      "location": "Iran, Tehran, khoramii 81",
+      "codemeli": "09265589717657",
+      "email": "rezajafarui@gmail.com",
+      "password": "Reza++1374"
     }
   ]
 }
