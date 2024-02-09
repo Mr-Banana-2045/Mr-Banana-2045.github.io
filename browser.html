@@ -42,7 +42,7 @@ function moz(){
 document.getElementById("result").style.visibility = "visible";
 var text = document.getElementById("ok").value;
 if( text.includes("source")){
-	fetch('https://nahanabzar.ir/ai?text='+text)
+	fetch('http://mahrez.iapp.ir/santcoin/index.php?text='+text)
         .then(response => response.json())
         .then(data => {
             const resultElement = document.getElementById("result");
