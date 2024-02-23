@@ -1,6 +1,6 @@
 <html lang="fa">
 	<head>
-		<title>پژوهشسرای رازی</title>
+		<title>پژوهشسرای رازی | گفتگو</title>
     <meta charset="UTF-8">
     	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -71,7 +71,7 @@
 									top:62px;
 									position: absolute;
 									display:none;
-									height:135px;
+									height:202px;
 									border:2px solid black;
 									width:200px;
 									}
@@ -85,18 +85,6 @@
 											margin-top:10px;
 											display: flex;
 											}
-											.app{
-												background: #F5C263;
-												position:fixed;
-												left:70px;
-												right:70px;
-												bottom:59px;
-												border-radius:15px;
-												padding:5px;
-												height:65px;
-												display:none;
-												border:2px solid black;
-												}
 												 dialog::backdrop {
 				background:rgba(23,23,23, .5);
 				}
@@ -114,12 +102,32 @@
 						font-size:15px;
 						float:right;
 						}
+						form{
+							margin-top:10px;
+							}
+							.but{
+								background:none;
+								padding:7px;
+								font-weight:900;
+								border:2px solid black;
+								border-radius:0px 10px 10px 0px;
+								}
+								.but:hover{
+									color:red;
+									}
+									input[type="text"]::placeholder {
+										color:black;
+										}
+										body::selection {
+											background:black;
+											color:white;
+											}
 		</style>
-	<body id="md">
+	<body>
 		<code>
 <header>
 	<img SRC="Banner.png" style="float:left; margin-left:10px; width:40px; height:40px;">
-		<img id="men" SRC="menu-svgrepo-com - 2024-02-21T194528.237.svg" style="width:30px; float:right; margin-right:10px; margin-top:7px; height:30px;"><img id="cls" SRC="Close.png" style="width:40px; float:right; margin-right:10px; margin-top:1px; margin-left:-10px; display:none; height:40px;"><center><h1 style="font-weight:900; font-size:20px;">پژوهشسرای رازی</h1></center>
+		<img id="men" SRC="menu-svgrepo-com - 2024-02-21T194528.237.svg" style="width:30px; float:right; margin-right:10px; margin-top:7px; height:30px;"><img id="cls" SRC="Close.png" style="width:40px; float:right; margin-right:10px; margin-top:1px; margin-left:-10px; display:none; height:40px;"><center><h1 style="font-weight:900; font-size:20px;">گفتگو</h1></center>
 	</header>
 	<div id="menn" class="mens" dir="rtl">
 		<a id="dad" style="font-weight:900; color:black; margin-right:10px;">درباره ما</a><br>
@@ -130,38 +138,32 @@
 		<div style="background:black; height:1px; margin:5px;"></div>
 		<a style="font-weight:900; margin-right:10px;" id="blu">حالت بلور</a>
 			<a style="font-weight:900; margin-right:10px; display:none;" id="bluf">حالت روشن</a><br>
+				<div style="background:black; height:1px; margin:5px;"></div>
+		<a href="razi.html" target="_blank" style="font-weight:900; color:black; margin-right:10px;">خانه</a>
+		<div style="background:black; height:1px; margin:5px;"></div>
+		<a href="developer.html" target="_blank" style="font-weight:900; color:black; margin-right:10px;">توسعه دهندگان</a>
 		</div>
-		<div style="overflow:scroll; height:95%;">
-	<table style="margin-top:55px; text-align:center; display:flex; align-items:center; justify-content: center;">
-  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/7cjchecea3t30"
+		<div style="overflow:scroll; height:100%;">
+	<table style="margin-top:55px; display:flex; margin-left:10px;">
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/g3lbghsnl4aei"
          data-sheetdb-sort-by="age"
   data-sheetdb-sort-order="desc">
   	<tr>
-      <td>{{news}}</td>
-      </tr>
+      <td><div style="padding:5px; width:300px;"><img SRC="profile.png" style="width:30px; margin-top:6px; float:left; margin-left:10px; height:30px;"><p style="font-weight:900; float:left; margin-left:5px;"><a>member : </a>{{chat}}</p></div></td>
+</tr>
   </tbody>
 </table>
 </div>
+<dialog>
+<p id="message" style="color:black; background:#F5C263; border-radius:10px; border:2px solid black; display:none; position: fixed; font-size:10px;">درحال ارسال ...</p>
+</dialog>
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
     <center><img id="img01" style="width:70%; position: absolute; top:30%; right:0; left:15%; bottom:0;  border-radius:15px; border:2px solid #F5C263;"></center>
   </div>
-	<div class="app" id="appe">
-		<img SRC="home.png" style="height:50px; width:50px; float:left; margin-left:10px;"><div style="background:black; height:30px; width:2px; margin:5px; margin-top:10px; float:left; margin-right:15px; margin-left:15px;"></div><a href="developer.html"><img SRC="coding.png" style="height:50px; width:50px; float:left; margin-right:5px; margin-left:5px;"></a><div style="background:black; height:30px; width:2px; margin:5px; margin-top:10px; float:left; margin-right:10px; margin-left:10px;"></div><a href="chats.html"><img SRC="chat.png" style="height:50px; width:50px; margin-right:10px; float:right;"></a>
-		</div>
 	<footer>
-		<p style="float:right; margin-right:20px; font-weight:900; font-size:15px;">با ما همراه باشید</p><b style="float:left; margin-left:20px; font-weight:900; font-size:20px; margin-top:5px;" id="sh">۸</b><b style="float:left; margin-top:5px; margin-left:20px; display:none; font-weight:900; font-size:20px;" id="off">۷</b><br>
-		<div style="display:none; margin-top:50px;" id="of">
-			<center><div style="background:black; height:1px; margin-top:-15px; margin-bottom:10px; width:300px;"></div></center>
-		<center><img SRC="IMG_20240221_185502_337.jpg" style="border-radius: 20px; width:80px; height:80px;">
-			<img SRC="IMG_20240221_185519_580.jpg" style="border-radius: 20px; width:80px; height:80px;"></center>
-				<center><div style="background:black; height:1px; margin-top:5px; width:300px;"></div></center>
-			<p style="font-weight:900;">ارتباط با ما</p>
-			<p style="margin-top:-10px; font-weight:300;">Admin Shad : <a href="https://shad.ir/SRezapour">@SRezapour</a></p>
-			<p style="margin-top:-10px; font-weight:300;">Number : <a href="tel:36216035">36216035<a></p>
-			<center><div style="background:black; height:1px; margin-top:5px; width:300px;"></div></center>
-			<p style="font-weight:900;">آدرس پژوهشسرای رازی</p>
-			<p style="margin-top:-10px; font-size:15px;">مشهد، امامیه 61 جنب دبیرستان عقیله پژوهشسرای رازی ناحیه 7</p>
-			</div>
+		<form method="post" action="https://sheetdb.io/api/v1/g3lbghsnl4aei" id="sheetdb-form">
+      	<input type="text" placeholder="Enter message..." name="data[chat]" style="background:none; outline:none; border:2px solid black; border-radius:10px 0px 0px 10px; padding:5px; width:300px; height:40px; color:white; padding-left:5px; font-size:15px;"><input type="submit" onclick="cli()" id="mes" class="but" value="ارسال">
+      	</form>
 		</footer>
 		</code>
 		</body>
@@ -174,13 +176,36 @@
 			function closer(){
 				document.getElementById("abu").style.display="none";
 				}
+				function cli(){
+      document.getElementById("message").style.display = "block";
+  	}
 </script>
+<script>
+const led = document.getElementById("message");
+const lede = document.getElementById("mes");
+led.returnValue = "favAnimal";
+lede.addEventListener("click", () => {
+  led.showModal();
+});
 function onClick(element) {
   document.getElementById("img01").src = element.src;
   document.getElementById("modal01").style.display = "block";
 }
 </script>
-			</script>
+<script>
+  var form = document.getElementById('sheetdb-form');
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+    	window.location.href="chats.html";
+    });
+  });
+</script>
 			<script>
 				$(document).ready(function (){
 					$("#appe").slideToggle("slow");
