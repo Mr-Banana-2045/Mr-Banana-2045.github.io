@@ -116,10 +116,7 @@
 												background:#F5C263;
 												border:2px solid black;
 												border-radius:15px;
-												display:none;
 												position: fixed;
-												top:20%;
-												left:5%;
 												padding:10px;
 												height:50%;
 												width:90%;
@@ -155,11 +152,11 @@
 <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
     <center><img id="img01" style="width:70%; position: absolute; top:30%; right:0; left:15%; bottom:0;  border-radius:15px; border:2px solid #F5C263;"></center>
   </div>
-  <div id="abu">
-	<h1 style="text-align:center; font-size:20px;">معرفی اساتید پژوهشسرا</h1><p onclick="clse()" style="font-weight:900; font-size:25px; float:right; margin-top:-60px; margin-right:10px;">×</p>
+  <dialog id="abu">
+	<h1 style="text-align:center; font-size:20px;">معرفی اساتید پژوهشسرا</h1><p id="clos" style="font-weight:900; font-size:25px; float:right; margin-top:-60px; margin-right:10px;">×</p>
 	<center><div style="background:black; height:1px; margin-top:5px; width:300px;"></div></center>
 	<p dir="rtl">مدیریت پژوهشسرا : سرکار خانم دکتر رضاپور<br>معاونت پژوهشسرا : سرکار خانم رحمانی‌پور<br>زیست فناوری و آزمایشگاه زیست : جناب آقای دکتر مجد<br>گیاهان دارویی و سلولهای بنیادی : سرکار خانم نفیسی فرد<br>آزمایشگاه علوم : جناب آقای پورحسن<br>نجوم : سرکار خانم کاهنی<br>رباتیک و کد نویسی : جناب آقای مهندس فلاح<br>کد نویسی (کامپیوتر) : سرکار خانم مهندس زارع کاریزی<br>فناوری فضایی و حمل‌ونقل پیشرفته و انرژی های نوین آزمایشگاه فیزیک : جناب آقای عطار<br>ادبیات و علوم انسانی : جناب آقای ساعی<br>انجمن نانو فناوری : سرکار خانم عارفی</p>
-	</div>
+	</dialog>
 	<div class="app" id="appe">
 		<a href="razi.html"><img SRC="home.png" style="height:50px; width:50px; float:left; margin-left:10px;"></a><div style="background:black; height:30px; width:2px; margin:5px; margin-top:10px; float:left; margin-right:15px; margin-left:15px;"></div><img SRC="coding.png" style="height:50px; width:50px; float:left; margin-right:5px; margin-left:5px;"><div style="background:black; height:30px; width:2px; margin:5px; margin-top:10px; float:left; margin-right:10px; margin-left:10px;"></div><a href="chats.html"><img SRC="chat.png" style="height:50px; width:50px; margin-right:10px; float:right;"></a>
 		</div>
@@ -183,12 +180,17 @@
 		<script src="https://sheetdb.io/handlebars.js"></script>
 		<script SRC="jquery.min.js"></script>
 		<script>
-			function dads(){
-				document.getElementById("abu").style.display = "block";
-				}
-				function clse(){
-				document.getElementById("abu").style.display = "none";
-				}
+			const mo = document.getElementById("dad");
+const can = document.getElementById("clos");
+const dialog = document.getElementById("abu");
+dialog.returnValue = "favAnimal";
+mo.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+can.addEventListener("click", () => {
+  dialog.close("animalNotChosen");
+});
 </script>
 <script>
 function onClick(element) {
