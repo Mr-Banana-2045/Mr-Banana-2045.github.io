@@ -146,13 +146,13 @@
 		<div style="background:black; height:1px; margin:5px;"></div>
 		<a href="developer.html" target="_blank" style="font-weight:900; color:black; margin-right:10px;">توسعه دهندگان</a>
 		</div>
-		<div style="overflow:scroll; height:100%;">
+		<div style="overflow:scroll; height:100%; justify-content:center; display:flex;">
 	<table style="margin-top:55px; display:flex; margin-left:10px;">
   <tbody data-sheetdb-url="https://sheetdb.io/api/v1/g3lbghsnl4aei"
          data-sheetdb-sort-by="age"
   data-sheetdb-sort-order="desc">
   	<tr>
-      <td><div style="padding:5px; width:300px;"><img SRC="profile.png" style="width:30px; margin-top:6px; float:left; margin-left:10px; height:30px;"><p style="font-weight:900; float:left; margin-left:5px;"><a>member : </a>{{chat}}</p></div></td>
+      <td dir="rtl"><div style="padding:5px; width:300px;"><img SRC="profile.png" style="width:30px; margin-top:6px; float:right; margin-right:10px; height:30px;"><p style="font-weight:900; float:right; margin-right:5px;"><a>client : </a>{{chat}}</p></div></td>
 </tr>
   </tbody>
 </table>
@@ -170,7 +170,7 @@
   </div>
 	<footer>
 		<form method="post" action="https://sheetdb.io/api/v1/g3lbghsnl4aei" id="sheetdb-form">
-      	<input type="text" placeholder="Enter message..." name="data[chat]" style="background:none; outline:none; border:2px solid black; border-radius:10px 0px 0px 10px; padding:5px; width:300px; height:40px; color:white; padding-left:5px; font-size:15px;"><input type="submit" onclick="cli()" id="mes" class="but" value="ارسال">
+      	<input type="text" placeholder="پیام شما ..." name="data[chat]" dir="rtl" style="background:none; outline:none; border:2px solid black; border-radius:10px 0px 0px 10px; padding:5px; width:300px; height:40px; color:white; padding-left:5px; font-size:15px;"><input type="submit" onclick="cli()" id="mes" class="but" value="ارسال">
       	</form>
 		</footer>
 		</code>
