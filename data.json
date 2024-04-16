@@ -11,8 +11,8 @@
       "password": "mohamadjab25"
     },
     {
-      "name": "علی",
-      "family": "نوروزی",
+      "name": "ali",
+      "family": "norozii",
       "age": 30,
       "phone": "+989186075579",
       "location": "Iran, mashhad, amirieh 12",
@@ -29,6 +29,16 @@
       "codemeli": "09265589717657",
       "email": "rezajafarui@gmail.com",
       "password": "Reza++1374"
+    }،
+    {
+    "name": "جمشید",
+      "family": "خداباوری",
+      "age": 48,
+      "phone": "+989156975457",
+      "location": "Iran, Tehran, sadeghieh 2",
+      "codemeli": "0932756901876",
+      "email": "jamshidkh91@gmail.com",
+      "password": "jamshiddd121"
     }
   ]
 }
