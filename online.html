@@ -1,0 +1,90 @@
+<html>
+	<title>Online inquiry</title>
+	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<body>
+		<style>
+			@font-face {
+    font-family: 'font';
+    src: url('@font_home-SomethingStrange.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'as';
+    src: url('BTitrBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: cli;
+    src: url('@font_home-Hokuto.ttf') format('truetype');
+}
+			body{
+				background:#001f3f;
+				text-align:center;
+				}
+				h1{
+					color:red;
+					font-weight:900;
+					font-family:'font';
+					font-size:50px;
+					}
+					p{
+						text-align:left;
+						font-family:'as';
+						margin-left:20px;
+						}
+						a{
+							color:green;
+							}
+							input{
+								padding:5px;
+								font-size:15px;
+								outline:none;
+								border:none;
+								border-radius:10px 0px 0px 10px;
+								font-weight:300;
+								}
+								button{
+									color:black;
+									font-weight:900;
+									border-radius:0px 10px 10px 0px;
+									font-size:15px;
+									background:white;
+									margin-left:-5px;
+									border:none;
+									padding:5px;
+									}
+			</style>
+		<h1>Online inquiry</h1>
+<script SRC="jquery.min.js"></script>
+<input type="text" id="nameInput" placeholder="name and family ...">
+<button onclick="getUserData()">search</button>
+<div id="userData" style="margin-top:20px;"></div>
+</body>
+<script>
+function getUserData() {
+    const esm = document.getElementById('nameInput').value;
+    const searchValues = esm.split(' ');
+    
+    const nameInput = searchValues[0];
+    const familyInput = searchValues[1];
+    
+    fetch('datas.json')
+        .then(response => response.json())
+        .then(data => {
+            const userData = data.find(item => item.name === nameInput && item.family === familyInput);
+            if (userData) {
+                document.getElementById('userData').innerHTML = `
+                    <p style="color:white;">Name:<a> ${userData.name}</a></p>
+                    <p style="color:white;">Family:<a> ${userData.family}</a></p>
+                    <p style="color:white;">Age:<a> ${userData.age}</a></p>
+                    <p style="color:white;">City: <a>${userData.city}</a></p>
+                    <p style="color:white;">Address:<a> ${userData.location}</a></p>
+                    <p style="color:white;">Number:<a> ${userData.number}</a></p>
+                    <p style="color:white;">Email: <a>${userData.email}</a></p>
+                `;
+            } else {
+                document.getElementById('userData').innerHTML = '<d style="color:red; font-size:20px; font-family:cli">Not find date</d>';
+            }
+        })
+}
+</script>
+</html>
