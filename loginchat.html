@@ -1,0 +1,141 @@
+<html lang="fa">
+	<title>Soufii Chat | login</title>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+		</head>
+		<style>
+			@font-face {
+				font-family: model;
+				SRC: url('arsalan.ttf') format('truetype');
+				}
+				@font-face {
+				font-family: titr;
+				SRC: url('BTitrBold.ttf') format('truetype');
+				}
+				@font-face {
+				font-family: but;
+				SRC: url('@font_home-SomethingStrange.ttf') format('truetype');
+				}
+			body{
+				background: white;
+				text-align:center;
+				color:red;
+				}
+				::selection {
+					background:red;
+					color:white;
+					}
+				h1{
+					font-family:model;
+					font-weight:900;
+					margin-top:50px;
+					font-size:70px;
+					}
+					p{
+						font-family: titr;
+						margin-top:-50px;
+					}
+					.panel{
+						border-radius:20px;
+						width:200px;
+						margin: auto;
+						}
+						input{
+							background:white;
+							font-family: titr;
+							border-radius:10px;
+							padding:10px;
+							margin-bottom:10px;
+							font-size:15px;
+							outline:none;
+							border:2px solid black;
+							text-align:right;
+							}
+								input[type="checkbox"] {
+									accent-color: red;
+									margin-right:80px;
+									}
+							input:focus{
+								border:2px solid red;
+								}
+								button{
+									font-family:model;
+									background: red;
+									color:white;
+									width:190px;
+									border-radius:10px;
+									padding:10px;
+									font-weight:900;
+									font-size:20px;
+									outline:none;
+									border:none;
+									}
+									button:hover{
+										background:black;
+										}
+										.ghava{
+											display:block;
+											width:200px;
+												text-align:center;
+											}
+											li{
+												text-align:right;
+												margin-right:10px;
+												font-family:titr;
+												margin-bottom:10px;
+												}
+												#dial{
+													position:fixed;
+													bottom:30px;
+													right:20px;
+													background:red;
+													border-radius:10px;
+													font-family:titr;
+													color:white;
+													padding:15px;
+													display:none;
+													}
+						
+			</style>
+		<body>
+			<h1>
+				صوفی چت
+				</h1>
+				<p style="color:black;">برای شروع ثبت نام کنید</p>
+				<div class="panel">
+					<input type="text" id="name" placeholder="نام کاربری" require><br>
+						<input type="password" id="name2" placeholder="رمز عبور" require><br>
+							<p style="color:black; margin-top:5px;"><input type="checkbox" id="off">تایید قوانین</p>
+								<div id="ghava">
+									<li dir="rtl">توهین به کاربران و افراد سرشناس ممنوع</li>
+									<li dir="rtl">تمسخر دین و عقاید دیگران ممنوع</li>
+									<li dir="rtl">نشر مطالب مخالف موازین اسلامی ممنوع</li>
+									</div>
+								<button id="start">ثبت نام</button>
+					</div>
+					<div id="dial">
+						<d style="margin-top:10px;">کادرهای ورودی را تکمیل کنید</d><a id="cls" style="font-weight:900; font-size:20px; margin-left:10px;">X</a>
+						</div>
+			</body>
+			<script SRC="jquery.min.js"></script>
+			<script>
+				$(document).ready(function (){
+				$("#off").click(function (){
+						$("#ghava").slideToggle("slow");
+						});
+						$("#start").click(function (){
+							if( document.getElementById("name").value.trim(), document.getElementById("name2").value.trim() === ""){
+							   $("#dial").toggle("slow");
+							} else {
+								window.location.href="indexchat.html?name="+document.getElementById("name").value+"&"+"pass="+document.getElementById("name2").value;
+								}
+								});
+								$("#cls").click(function (){
+									$("#dial").toggle("slow");
+									});
+						});
+				</script>
+				<script>
+					</script>
+	</html>
