@@ -17,6 +17,12 @@
 				font-family: but;
 				SRC: url('@font_home-SomethingStrange.ttf') format('truetype');
 				}
+				.dark-mode {
+  background-color: black;
+}
+dark-sh{
+	
+	}
 			body{
 				background: white;
 				text-align:center;
@@ -31,119 +37,65 @@
 					font-weight:900;
 					font-size:40px;
 					float:right;
+					margin-top:7px;
 					margin-right:20px;
 					}
 					header{
-						margin-top:-30px;
 						position: absolute;
 						top:0;
 						left:0;
 						right:0;
 						}
-						.msg{
+						img{
+							height:50px;
 							margin-top:10px;
-							text-align:right;
+							width:50px;
+							float:right;
+							margin-right:20px;
+							border-radius:50px;
+							border:3px solid black;
 							}
-						.channel{
-							margin-right:10px;
-							border:2px solid black;
-							border-radius:20px;
-							margin-left:30px;
-							margin-right:30px;
-							}
-							img{
-								height:50px;
-								width:50px;
-								border:3px solid black;
-								border-radius:50px;
-								float:right;
-								margin-right:10px;
-								margin-top:8px;
-								margin-left:10px;
+							tr{
+								background:#FF1E0E;
+								color:white;
+								margin-bottom:10px;
+							    font-family:titr;
 								}
-								#add{
-									position:fixed;
-									bottom:30px;
-									right:20px;
-									background:red;
-									border-radius:50px;
-									padding:10px;
-									width:50px;
-									height:50px;
-									text-align:center;
+								.the{
+									position: absolute;
+									bottom:0;
+									right:0;
+									left:0;
+								    height:50px;
+									font-family:model;
+									font-weight:900;
+									font-size:30px;
+									color:white;
+									background:black;
 									}
-									#dial{
-													position:fixed;
-													bottom:40px;
-													right:20px;
-													background:red;
-													border-radius:10px;
-													font-family:titr;
-													color:white;
-													padding:15px;
-													display:none;
-													}
-													#menu{
-														position:fixed;
-														top:50px;
-														color:white;
-														background: black;
-														padding:5px;
-														border-radius:0px 0px 20px 20px;
-														left:20px;
-														width:150px;
-														text-align:right;
-														display:none;
-														}
-														p{
-															font-family:titr;
-															}
 			</style>
 		<body>
 			<header>
-				<h1>صوفی چت</h1><p style="font-size:40px; color:black; font-weight:300; float:left; margin-left:20px;" id="show">+</p>
+				<img SRC="image_1.jpg"><h1>کانال اطلاع رسانی</h1><br><p style="color:black; font-weight:900; float:right; margin-right:-240px; margin-top:30px;">خصوصی</p>
 				</header>
-				<div style="background:black; padding:2px; margin-top:50px;"></div>
-				<div class="msg">
-					<div class="channel" onclick="chnl()">
-						<img SRC="image_1.jpg"><p style="font-family:titr; font-size:20px;">کانال اطلاع رسانی</p><br><d style="float:right; color:black; margin-top:-35px; margin-right:75px; width:150px; font-weight:900;">کانال خصوصی</d>
-						</div>
-					</dir>
-					<div id="add">
-						<p style="color:white; font-weight:200; font-size:50px; margin-top:5px;">+</p>
-						</div>
-						<div id="dial">
-						<d style="margin-top:10px;">ایجاد گروه/کانال فعال نیست</d><a id="cls" style="font-weight:900; font-size:20px; margin-left:10px;">X</a>
-						</div>
-						<div id="menu" dir="rtl">
-							<p style="margin-right:10px;">نام کاربری : <a style="color:white; font-weight:900;" id="text"></a></p>
-							<div style="background:white; padding:0.5px; margin-left:10px; margin-right:10px;"></div>
-							<p style="margin-right:10px;">رمز عبور : <a style="color:white; font-weight:900;" id="password"></a></p>
-							</div>
+				<div style="background:black; padding:1px; margin-top:80px;"></div>
+				<table style="margin-top:20px; display:flex; margin-right:20px;" dir="rtl">
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/67oyyddt24gn8"
+         data-sheetdb-sort-by="age"
+  data-sheetdb-sort-order="desc">
+  	<tr><td>{{chat}}</td></tr>
+  </tbody>
+</table>
+<div class="the">
+	<p style="margin-top:-0px;">خصوصی</p>
+	</div>
 			</body>
+			<script src="https://sheetdb.io/handlebars.js"></script>
 			<script SRC="jquery.min.js"></script>
 			<script>
-				$(document).ready(function (){
-				$("#add").click(function (){
-							   $("#dial").toggle("slow");
-								});
-							$("#cls").click(function (){
-									$("#dial").toggle("slow");
-									});
-									$("#show").click(function (){
-									$("#menu").fadeToggle("slow");
-									});
-									
-						});
+				
 				</script>
 				<script>
-					var params = new URLSearchParams(window.location.search);
-  var text = params.get('name');
-  var pass = params.get('pass');
-  document.getElementById('text').innerText = text;
-  document.getElementById('password').innerText = pass;
-  function chnl() {
-  	window.location.href="channels.html";
-  }
+					
 					</script>
 </html>
