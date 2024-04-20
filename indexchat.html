@@ -105,7 +105,7 @@
 				</header>
 				<div style="background:black; padding:2px; margin-top:50px;"></div>
 				<div class="msg">
-					<div class="channel">
+					<div class="channel" onclick="chnl()">
 						<img SRC="image_1.jpg"><p style="font-family:titr; font-size:20px;">کانال اطلاع رسانی</p><br><d style="float:right; color:black; margin-top:-35px; margin-right:75px; width:150px; font-weight:900;">کانال خصوصی</d>
 						</div>
 					</dir>
@@ -142,5 +142,8 @@
   var pass = params.get('pass');
   document.getElementById('text').innerText = text;
   document.getElementById('password').innerText = pass;
+  function chnl() {
+  	window.location.href="channels.html";
+  }
 					</script>
-	</html>
+</html>
