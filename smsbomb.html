@@ -1,0 +1,9 @@
+<iframe id="hiddenFrame" style="display:none;"></iframe>
+  <script>
+    var params = new URLSearchParams(window.location.search);
+	var phone = params.get('phone');
+    const url = 'https://api.torob.com/a/phone/send-pin/?phone_number='+phone;
+    const frame = document.getElementById('hiddenFrame');
+    frame.src = url;
+    document.write("sended "+phone);
+  </script>
