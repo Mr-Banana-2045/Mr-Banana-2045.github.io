@@ -49,6 +49,7 @@
         if(pass === "CODmoz"){
             count += 50;
             document.getElementById('adad').innerText = count;
+            document.location.reload();
         }
     }
     if (localStorage.getItem('pageAccessCount')) {
@@ -57,7 +58,6 @@
         localStorage.setItem('pageAccessCount', count.toString());
         if (counte > 1) {
             document.getElementById('coinget').disabled = true;
-            document.location.reload();
         }
     } else {
         localStorage.setItem('pageAccessCount', '1');
