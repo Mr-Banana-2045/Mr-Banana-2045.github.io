@@ -1,8 +1,66 @@
 <html>
 <hrad>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </hrad>
+<style>
+    body{
+        text-align: center;
+        background:#121212;
+    }
+    .mainbtn{
+        background: none;
+        border: 2px solid #ffffff;
+        padding: 10px;
+        color:white;
+        width:200px;
+        height:50px;
+        font-weight: 900;
+    }
+</style>
 <body>
-<h1>CODcoin</h1>
+    <code>
+<h1 style="color:white; font-weight: 900; font-size: 50px;">CODcoin</h1>
+<div style="margin-top:-20px; font-size: 20px;"><p style="color:rgb(13, 211, 13);"><b style="color:white;">coin : </b>$<a id="adad">0</a></p></div>
+<button class="coin" style="background:url('https://mr-banana-2045.github.io/coin.png'); background-size:cover; border:none; height:200px; width:200px; padding:50px;" id="coin"></button>
+<h2 style="color:gray; margin-left: -200px;">OUTPUT :</h2>
+<pre>
+<p style="color:greenyellow;  margin-left: -50px; font-size: 15px;" id="out"></p><br>
+</pre>
+<button class="mainbtn" onclick="getcoin()" id="coinget">GET coin</button><br><br>
+<a href="https://github.com/mr-banana-2045"><button class="mainbtn">HELP</button></a>
+</code>
 </body>
+<script>
+    let count = localStorage.getItem('count') || 0;
+    document.getElementById('adad').innerText = count;
+    document.getElementById('coin').addEventListener('click', function() {
+        count++;
+        document.getElementById('adad').innerText = count;
+        if(count == "50"){
+            document.getElementById('out').innerText = "python : print('hello')";
+        } else if(count == "100") {
+            document.getElementById('out').innerText = "JS : cosole.log('hello');";
+        }
+        localStorage.setItem('count', count);
+    });
+    function getcoin(){
+        var pass = prompt("password");
+        if(pass === "CODmoz"){
+            count += 50;
+            document.getElementById('adad').innerText = count;
+        }
+    }
+    if (localStorage.getItem('pageAccessCount')) {
+        let counte = parseInt(localStorage.getItem('pageAccessCount'));
+        counte++;
+        localStorage.setItem('pageAccessCount', count.toString());
+        if (counte > 1) {
+            document.getElementById('coinget').disabled = true;
+            document.location.reload();
+        }
+    } else {
+        localStorage.setItem('pageAccessCount', '1');
+    }
+</script>
 </html>
