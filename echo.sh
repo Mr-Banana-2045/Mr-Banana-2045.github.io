@@ -1,1 +1,1 @@
-echo -e "\033[92 moz"
+echo "moz"
