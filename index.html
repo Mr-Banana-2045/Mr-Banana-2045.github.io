@@ -1,23 +1,45 @@
+<!DOCTYPE html>
 <html>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>moz</title>
-	<frameset rows="50%, 50%, 50%,15%" bordercolor="red" border="10" cellpadding="20">
-	<frameset cols="50%, 50%, 50%">
-		<frame SRC="aa.html">
-			<frame SRC="bb.html">
-				<frame SRC="cc.html">
-					</frameset>
-    <frameset cols="50%, 50%, 50%">
-		<frame SRC="cc.html">
-			<frame SRC="bb.html">
-				<frame SRC="aa.html">
-					</frameset>
-	<frameset cols="50%, 50%, 50%">
-		<frame SRC="aa.html">
-			<frame SRC="bb.html">
-					<frame SRC="cc.html">
-					</frameset>
-					<frame SRC="moz.html">
-					</frameset>
-					</html>
-					
+
+<head>
+  <title>DTMF Demo</title>
+  <script type="text/javascript" src="lib/dtmf.js"></script>
+  <style>
+  #output {
+    background-color: #eee;
+    min-height: 50px;
+    width: 100%;
+    overflow-wrap: break-word;
+    color: blue;
+    margin-top: 10px;
+  }
+  </style>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    var sender = new DTMF.Sender();
+    var receiver = new DTMF.Receiver();
+
+    navigator.getUserMedia({
+      audio: true
+    }, function(stream) {
+      var output = document.getElementById("output");
+      receiver.start(stream, function(char) {
+        output.innerHTML += char;
+      });
+    }, function(e) {
+      alert('Cannot access audio stream.');
+      console.log(e);
+    });
+  </script>
+
+  <h1>DTMF Demo</h1>
+
+
+  <div id="output"></div>
+
+</body>
+
+</html>
