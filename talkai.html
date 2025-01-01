@@ -80,7 +80,7 @@ recognition.onresult = function(event) {
   var mic = event.results[0][0].transcript;
   
   if (mic) {
-      fetch('https://talkai.ct.ws/gpt.php?text=' + encodeURIComponent(mic))
+      fetch('http://talkai.ct.ws/gpt.php?text=' + encodeURIComponent(mic))
         .then(response => response.json())
         .then(data => {
         	if (data.error) {
