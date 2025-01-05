@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        .line-numbers {
+            background: #18181a;
+            text-align: right;
+            color:rgb(136, 136, 136);
+            padding-right: 5px;
+            user-select: none;
+            border-right: 1px solid #ccc;
+            min-width: 40px;
+            overflow-y: auto;
+            overflow: hidden;
+            line-height: 18px;
+            height: 100%;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+        .editor {
+            width: calc(100% - 41px);
+            height: 100%;
+            background: #212124;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+            resize: none;
+            padding-left:5px;
+            border: none;
+            overflow-y: auto;
+            overflow-x: auto;
+            line-height: 18px;
+            font-size: 15px;
+            box-sizing: border-box;
+            outline: none;
+            white-space: pre;
+        }
+        .string {
+            color: green;
+        }
+        .keyword {
+            color: orange;
+        }
+        .symbol {
+        	color:rgb(49, 49, 218);
+        }
+        .desc{
+            color:rgb(104, 104, 104);
+        }
+        .save{
+            position: absolute;
+            bottom: 20px;
+            right:20px;
+            background: green;
+            border-radius: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="line-numbers" id="lineNumbers"></div>
+    <div id="editor" class="editor" contenteditable="true" oninput="updateLineNumbersAndHighlight()" onscroll="syncScroll()"></div>
+</div>
+<div class="save" onclick="saveContent()">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" version="1.1" id="Capa_1" width="50px" height="50px" viewBox="-40.71 -40.71 488.52 488.52" xml:space="preserve" stroke="#ffffff" stroke-width="0.00407096" transform="rotate(0)">
+
+        <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+        
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="8.14192"/>
+        
+        <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M402.115,84.008L323.088,4.981C319.899,1.792,315.574,0,311.063,0H17.005C7.613,0,0,7.614,0,17.005v373.086 c0,9.392,7.613,17.005,17.005,17.005h373.086c9.392,0,17.005-7.613,17.005-17.005V96.032 C407.096,91.523,405.305,87.197,402.115,84.008z M300.664,163.567H67.129V38.862h233.535V163.567z"/> <path d="M214.051,148.16h43.08c3.131,0,5.668-2.538,5.668-5.669V59.584c0-3.13-2.537-5.668-5.668-5.668h-43.08 c-3.131,0-5.668,2.538-5.668,5.668v82.907C208.383,145.622,210.92,148.16,214.051,148.16z"/> </g> </g> </g>
+        
+        </svg>
+</div>
+<script>
+function updateLineNumbersAndHighlight() {
+    const editor = document.getElementById('editor');
+    const lineNumbers = document.getElementById('lineNumbers');
+    const lines = editor.innerText.split('\n').length;
+
+    let lineNumbersContent = '';
+    for (let i = 1; i <= lines; i++) {
+        lineNumbersContent += i + '<br>';
+    }
+
+    lineNumbers.innerHTML = lineNumbersContent;
+    lineNumbers.scrollTop = editor.scrollTop;
+    localStorage.setItem('editorLine', lineNumbersContent);
+    highlightSyntax();
+}
+
+function syncScroll() {
+    const editor = document.getElementById('editor');
+    const lineNumbers = document.getElementById('lineNumbers');
+    lineNumbers.scrollTop = editor.scrollTop;
+}
+
+let isCommenting = false;
+
+function highlightSyntax() {
+    const editor = document.getElementById('editor');
+    const text = editor.innerText;
+
+    if (isCommenting) {
+        localStorage.setItem('editorText', text);
+        return;
+    }
+
+    const keywords = /print|echo|True|False|console\.log/g;
+    const strings = /(".*?"|'.*?')/g;
+    const symbols = /[(){}:\-+;]/g;
+    const desc = /(#.*?$)/gm;
+
+    let highlightedText = text
+        .replace(strings, '<span class="string">$&</span>')
+        .replace(keywords, '<span class="keyword">$&</span>')
+        .replace(desc, '<span class="desc">$&</span>')
+        .replace(symbols, '<span class="symbol">$&</span>');
+
+    editor.innerHTML = highlightedText;
+    placeCaretAtEnd(editor);
+    localStorage.setItem('editorText', text);
+}
+
+document.getElementById('editor').addEventListener('input', (event) => {
+    const text = event.target.innerText;
+    if (text.includes('#')) {
+        isCommenting = true;
+    }
+});
+
+document.getElementById('editor').addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        if (isCommenting) {
+            isCommenting = false; 
+        }
+    }
+});
+
+function loadEditorContent() {
+    const editor = document.getElementById('editor');
+    const lineNumbers = document.getElementById('lineNumbers');
+    const savedText = localStorage.getItem('editorText');
+    const savedLine = localStorage.getItem('editorLine');
+
+    if (savedText) {
+        editor.innerText = savedText;
+    }
+    if (savedLine) {
+        lineNumbers.innerHTML = savedLine;
+    }
+    highlightSyntax();
+}
+
+function placeCaretAtEnd(el) {
+    el.focus();
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    range.collapse(false);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+}
+
+function saveContent() {
+    const editor = document.getElementById('editor');
+    const content = editor.innerText;
+
+    const fileName = prompt("File Name :");
+    if (fileName) {
+        const blob = new Blob([content], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+}
+
+window.onload = loadEditorContent;
+
+</script>
+</body>
+</html>
